@@ -14,3 +14,12 @@ width: 100% !important;
     position: fixed !important;
     top: 35px !important;
  }
+ .festive-regular {
+    font-family: "Festive", cursive;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 30px;
+    letter-spacing: 3;
+    text-align: center;
+  }
+  

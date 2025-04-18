@@ -106,15 +106,6 @@ a.active{
 
 /* nextPrevArrows Section  */
 .nextPrevArrows{
-    /* position: absolute;
-    top: 80%;
-    right: 52%;
-    z-index: 100;
-    width: 300px;
-    max-width: 30%;
-    display: flex;
-    gap: 10px;
-    align-items: center; */
 
     position: absolute;
     z-index: 100;
@@ -183,7 +174,14 @@ a.active{
     position: absolute;
     bottom: 0px;
     background: #5b5b5b;
-    background: linear-gradient(to right, #2d2d2d, #010f27c4);
+    background: linear-gradient(216deg, #ffffff54 30%, #f1f1f15b, #cfabdb7c, #71248981 ) !important;
+    transition: .3s ease-in-out;
+    color: black;
+    user-select: none;
+}
+.description:hover{
+scale: 1.06;
+    background: linear-gradient(216deg, #722489 30%, #cfabdb, #f1f1f1, #fff) !important;
 }
 .slider .list .item:nth-child(1) .content .buttons{
     animation-delay: 1s !important;
