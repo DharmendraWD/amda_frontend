@@ -59,7 +59,10 @@
             position: relative;
             padding: 0 20px 0 40px;
             min-height: 82px;
-            background-color: rgb(3 44 111);
+            /* background-color: rgb(3 44 111); */
+            background: #d3d3d3;
+            box-shadow: 5px 5px 6px #bebebe, -2px 8px 2px #ffffff;
+            z-index: 9;
         }
 
         .header__logo {
@@ -112,7 +115,7 @@
             left: 0;
             border-radius: 12px;
             padding: 30px 12px;
-            background-color:#011535;
+            background-color: #dbdbdb;
             opacity: 0;
 z-index: 99;
             visibility: hidden;
@@ -437,7 +440,12 @@ z-index: 99;
             .submenu-list__item.has-submenu:hover .submenu-list__item-wrapper {
                 background-color: rgba(255, 255, 255, 0.04);
             }
-
+.submenu-list__item-wrapper:hover{
+background: #858585 !important;
+}
+.submenu-list__item-wrapper{
+background: #ffffff57 !important;
+}
             .submenu-list__item.has-submenu:hover .submenu-content,
             .submenu-list__item.has-submenu:hover .submenu-list__item-wrapper>svg {
                 opacity: 1;
@@ -716,14 +724,15 @@ z-index: 99;
                             <i class="fas fa-arrow-alt-circle-down"></i> Lorem
                         </a>
                     </li>
-                    <div class="flex border-1 border-blue-900 overflow-hidden max-w-md mx-auto">
+                    <!-- SEARCH BAR -->
+                    <!-- <div class="flex border-1 border-blue-900 overflow-hidden max-w-md mx-auto">
                         <input type="email" placeholder="Search Something..."
                             class="w-full outline-none bg-white text-gray-600 text-sm px-2 rounded-tl-[6px] rounded-bl-[6px]" />
                         <button type='button'
                             class="flex items-center justify-center bg-[#007bff] px-3 text-sm text-white">
                             Search
                         </button>
-                    </div>
+                    </div> -->
 
 
                 </ul>
@@ -737,7 +746,7 @@ z-index: 99;
 
 
             <div class="base-template__content">
-                <header class="header">
+                <header class="header" id="navBarMain">
                     <div class="header__wrapper">
                         <a href="https://bato.dev/" target="_blank" class="header__logo">
                             <img loading="lazy" src="logo-removebg-preview.png" alt="Logo" class="logo">
@@ -2458,6 +2467,7 @@ z-index: 99;
                                     <li class="header__list-item">
                                         <a href="#">Gallary</a>
                                     </li>
+                  
                                     <!-- Vacancy  -->
 
                                     <li class="header__list-item has-submenu">
@@ -2715,8 +2725,19 @@ z-index: 99;
                                             </div>
                                         </div>
                                     </li>
+<!-- SEARC HBAR  -->
+                                    <li class="header__list-item">
+                                        <div class="flex border-1 border-blue-900 overflow-hidden max-w-md mx-auto">
+                                            <input type="email" placeholder="Search Something..."
+                                                class="w-full outline-none bg-white text-gray-600 text-sm px-2 rounded-tl-[6px] rounded-bl-[6px]" />
+                                            <button type='button'
+                                                class="flex items-center justify-center bg-[#007bff] px-3 text-sm text-white">
+                                                Search
+                                            </button>
+                                        </div>
+                                    </li>
                                 </ul>
-
+                             
                                 
                             </nav>
 
@@ -2731,6 +2752,7 @@ z-index: 99;
                                     </svg>
                                 </a>
                             </div> -->
+                    
                         </div>
                         <div class="header__burger"><i></i><i></i><i></i></div>
                     </div>
@@ -2859,7 +2881,7 @@ z-index: 99;
           </div>
           <main class="flex flex-col items-center justify-center flex-1">
            <!-- sidebar open button  -->
-            <button @click="isSidebarOpen = true" class="p-2 text-white rounded-lg absolute top-[107px] right-[40px]">
+            <button @click="isSidebarOpen = true" class="p-2 text-black rounded-lg absolute top-[97px] right-[100px] z-[9] " id="hmBrgr">
               <svg
                 class="w-6 h-6"
                 xmlns="http://www.w3.org/2000/svg"
@@ -2898,13 +2920,6 @@ z-index: 99;
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
                 </div>
 
-                <button class="buttonAnimated1">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span>See More</span>
-                  </button>
             </div>
         </div>
 
@@ -2917,13 +2932,7 @@ z-index: 99;
                 <div class="description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
                 </div>
-                <button class="buttonAnimated1">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span>See More</span>
-                  </button>>
+
             </div>
         </div>
 
@@ -2936,13 +2945,7 @@ z-index: 99;
                 <div class="description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
                 </div>
-                <button class="buttonAnimated1">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                   <span>See More</span>
-                  </button>
+
             </div>
         </div>
 
@@ -2955,13 +2958,7 @@ z-index: 99;
                 <div class="description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
                 </div>
-                <button class="buttonAnimated1">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                   <span>See More</span>
-                  </button>
+
             </div>
         </div>
         <div class="item">
@@ -2973,13 +2970,7 @@ z-index: 99;
                 <div class="description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
                 </div>
-                <button class="buttonAnimated1">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                   <span>See More</span>
-                  </button>
+
             </div>
         </div>
 
@@ -3014,7 +3005,7 @@ z-index: 99;
 
 
 </div>
-
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio eum quisquam quibusdam. Non, libero corporis aliquam ea voluptatem rerum saepe quasi voluptate dolorem, quia aut sit nobis mollitia et accusamus quod. Amet libero, accusantium harum, eius error a sed voluptatem, officiis quod pariatur porro praesentium distinctio veritatis enim numquam in voluptate voluptatum! Quos magni iste laborum vitae in quasi corrupti optio quidem doloremque maxime eveniet facilis inventore assumenda provident, dicta voluptas accusamus ipsam magnam? Deleniti consequatur blanditiis et labore quisquam quae enim repellat, aspernatur eligendi, magnam tempora similique impedit odit voluptatem ipsa rerum, nobis accusamus magni dolore corporis vel optio recusandae? Quia amet voluptas nostrum unde. Aliquid delectus dolor quas in voluptatibus dolore iure consequuntur ipsa animi veniam! Rem illum cum accusantium, tempora distinctio deserunt reprehenderit! Id dolorum voluptatibus accusamus veritatis quidem adipisci dolorem reiciendis, molestiae provident ullam eaque non illo modi similique! Officia quibusdam odio modi porro. Ad voluptates autem natus laudantium incidunt harum, non in, eligendi dolore aut possimus aspernatur beatae alias pariatur impedit! Aliquam excepturi ullam veniam, qui laboriosam inventore nemo eos voluptas pariatur corrupti minus odit eligendi architecto exercitationem fugiat! Voluptatibus quibusdam modi omnis officia cum animi nobis laborum libero quidem explicabo vitae earum perferendis, suscipit ea! Cupiditate commodi quasi labore ab aliquam tempora facere? Officia atque laborum voluptatum consequuntur eligendi voluptatibus voluptatem vel doloremque! Numquam delectus id quas, voluptates veritatis quia facere natus esse non suscipit dolorem cum, at unde deserunt doloribus voluptatibus velit magnam quo. Ipsum pariatur minima amet quae porro vel tenetur et error est, a minus nemo facere ad adipisci nostrum cupiditate sapiente illum reprehenderit, sequi corporis neque veritatis iste unde? Similique saepe nemo, temporibus eos neque deserunt odit molestias mollitia soluta nulla praesentium excepturi sequi at laudantium! Exercitationem numquam ducimus, repellendus amet odio, sed dignissimos quae autem ea quaerat itaque?
     
 </body>
 
@@ -3022,6 +3013,21 @@ z-index: 99;
 
 <script>
     window.addEventListener("DOMContentLoaded", () => {
+
+
+        // scorll navbar 
+        window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navBarMain');
+    const hmBrgr = document.getElementById('hmBrgr');
+    if (window.scrollY > 20) {
+      navbar.classList.add('fixed11');
+      hmBrgr.classList.add('fixedforHmbrgr');
+    } else {
+      navbar.classList.remove('fixed11');
+      hmBrgr.classList.remove('fixedforHmbrgr');
+    }
+  });
+        // scorll navbar end
 
         const burger = document.querySelector(".header__burger");
         const navWrapper = document.querySelector(".header__navigation-wrapper");

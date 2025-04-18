@@ -42,6 +42,7 @@ a.active{
     box-sizing: border-box;
     color: #fff;
     text-shadow: 0 5px 10px #0004;
+    height: 80%;
 }
 
 .slider .list .item .content .title,
@@ -74,7 +75,7 @@ a.active{
 /* Thumbnail Section  */
 .thumbnail{
     position: absolute;
-    bottom: 50px;
+  bottom: 75px;;
     left: 50%;
     width: max-content;
     z-index: 100;
@@ -83,10 +84,15 @@ a.active{
 }
 
 .thumbnail .item{
-    width: 150px;
+    /* width: 150px;
     height: 220px;
     flex-shrink: 0;
+    position: relative; */
+    width: 140px;
+    height: 187px;
+    flex-shrink: 0;
     position: relative;
+    z-index: 0 !important;
 }
 
 .thumbnail .item img{
@@ -100,7 +106,7 @@ a.active{
 
 /* nextPrevArrows Section  */
 .nextPrevArrows{
-    position: absolute;
+    /* position: absolute;
     top: 80%;
     right: 52%;
     z-index: 100;
@@ -108,7 +114,16 @@ a.active{
     max-width: 30%;
     display: flex;
     gap: 10px;
+    align-items: center; */
+
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    display: flex;
     align-items: center;
+    justify-content: space-between; 
+    top: 44%;
+    padding: 0 36px;
 }
 .nextPrevArrows button{
     width: 40px;
@@ -161,6 +176,14 @@ a.active{
     animation-delay: 0.8s !important;
     backdrop-filter: blur(3px);
     border-radius: 11px;
+}
+.description{
+    padding: 0 33px;
+    z-index: 100;
+    position: absolute;
+    bottom: 0px;
+    background: #5b5b5b;
+    background: linear-gradient(to right, #2d2d2d, #010f27c4);
 }
 .slider .list .item:nth-child(1) .content .buttons{
     animation-delay: 1s !important;

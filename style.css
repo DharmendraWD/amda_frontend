@@ -6,7 +6,7 @@
 }
 
 .subMenuListOfFirstMenu li {
-    border: 1px solid #6d6d6d;
+    /* border: 1px solid #6d6d6d; */
 }
 
 .subMenuListOfFirstMenu .submenu-list__item {
@@ -58,14 +58,15 @@
 }
 
 .PublicationMenuParent ul li {
-    border:1px solid #6d6d6d;
+    /* border:1px solid #6d6d6d; */
 }
 
 .mthere {
     margin-top: 20px;
 }
 .header__list li a span, .header__list li a, .header__buttons-wrapper a span{
-    color: white !important;
+    color: rgb(0, 0, 0) !important;
+    font-weight: 600;
 }
  .menuIconOfMegaMenu{
     width: 50px;
