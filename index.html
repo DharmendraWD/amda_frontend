@@ -8,30 +8,39 @@
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 
     <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
-    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 
 
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 
 
 
 
     <style>
-           .marquee {
-      animation: scroll 30s linear infinite;
-    }
-    .marquee-wrapper:hover .marquee {
-      animation-play-state: paused;
-    }
+        .marquee {
+            animation: scroll 30s linear infinite;
+        }
 
-    @keyframes scroll {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
+        .marquee-wrapper:hover .marquee {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
         :root {
             --color-primary: rgba(5, 249, 255, 1);
             --transition: 0.4s;
         }
+
         .base-template__wrapper {
             /* min-height: calc(100dvh - 300px); */
             justify-content: flex-start;
@@ -615,21 +624,32 @@
             <div class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none hidden bg-blueGray-800"
                 id="example-collapse-navbar">
                 <ul class="flex flex-col lg:flex-row list-none mr-auto">
-            
-                          <li class="flex items-center">
-            <a class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-js%2F" target="_blank"><i class="lg:text-blueGray-200 text-blueGray-400 fab fa-facebook text-lg leading-lg"></i><span class="lg:hidden inline-block ml-2">Share</span></a>
-          </li>
-          <li class="flex items-center">
-            <a class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-js%2F&amp;text=Start%20your%20development%20with%20a%20Free%20Tailwind%20CSS%20and%20JavaScript%20UI%20Kit%20and%20Admin.%20Let%20Notus%20JS%20amaze%20you%20with%20its%20cool%20features%20and%20build%20tools%20and%20get%20your%20project%20to%20a%20whole%20new%20level." target="_blank"><i class="lg:text-blueGray-200 text-blueGray-400 fab fa-twitter text-lg leading-lg"></i><span class="lg:hidden inline-block ml-2">Tweet</span></a>
-          </li>
-          <li class="flex items-center">
-            <a class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="https://github.com/creativetimofficial/notus-js?ref=njs-register" target="_blank"><i class="lg:text-blueGray-200 text-blueGray-400 fab fa-github text-lg leading-lg"></i><span class="lg:hidden inline-block ml-2">Star</span></a>
-          </li>
-          <li class="flex items-center">
-            <a class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs"
-                href="">
-                Gokarneshwar-6 Jorpati, Kathmandu, Tel : +977-1-4910235,4911140   </a>
-        </li>
+
+                    <li class="flex items-center">
+                        <a class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-js%2F"
+                            target="_blank"><i
+                                class="lg:text-blueGray-200 text-blueGray-400 fab fa-facebook text-lg leading-lg"></i><span
+                                class="lg:hidden inline-block ml-2">Share</span></a>
+                    </li>
+                    <li class="flex items-center">
+                        <a class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                            href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-js%2F&amp;text=Start%20your%20development%20with%20a%20Free%20Tailwind%20CSS%20and%20JavaScript%20UI%20Kit%20and%20Admin.%20Let%20Notus%20JS%20amaze%20you%20with%20its%20cool%20features%20and%20build%20tools%20and%20get%20your%20project%20to%20a%20whole%20new%20level."
+                            target="_blank"><i
+                                class="lg:text-blueGray-200 text-blueGray-400 fab fa-twitter text-lg leading-lg"></i><span
+                                class="lg:hidden inline-block ml-2">Tweet</span></a>
+                    </li>
+                    <li class="flex items-center">
+                        <a class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                            href="https://github.com/creativetimofficial/notus-js?ref=njs-register" target="_blank"><i
+                                class="lg:text-blueGray-200 text-blueGray-400 fab fa-github text-lg leading-lg"></i><span
+                                class="lg:hidden inline-block ml-2">Star</span></a>
+                    </li>
+                    <li class="flex items-center">
+                        <a class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs"
+                            href="">
+                            Gokarneshwar-6 Jorpati, Kathmandu, Tel : +977-1-4910235,4911140 </a>
+                    </li>
                 </ul>
                 <ul class="flex flex-col lg:flex-row list-none lg:ml-auto items-center">
                     <li class="inline-block relative">
@@ -684,7 +704,7 @@
                             </a>
                         </div>
                     </li>
-          
+
                     <li class="flex items-center">
                         <a class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
                             href="#" target="_blank">
@@ -705,18 +725,19 @@
                     </li>
                     <div class="flex border-1 border-blue-900 overflow-hidden max-w-md mx-auto">
                         <input type="email" placeholder="Search Something..."
-                          class="w-full outline-none bg-white text-gray-600 text-sm px-2 rounded-tl-[6px] rounded-bl-[6px]" />
-                        <button type='button' class="flex items-center justify-center bg-[#007bff] px-3 text-sm text-white">
-                          Search
+                            class="w-full outline-none bg-white text-gray-600 text-sm px-2 rounded-tl-[6px] rounded-bl-[6px]" />
+                        <button type='button'
+                            class="flex items-center justify-center bg-[#007bff] px-3 text-sm text-white">
+                            Search
                         </button>
-                      </div>
+                    </div>
 
-                    
+
                 </ul>
             </div>
         </div>
     </nav>
-    
+
     <!-- Mega Menu  -->
     <section class="base-template">
         <div class="wrapper base-template__wrapper">
@@ -726,7 +747,7 @@
                 <header class="header">
                     <div class="header__wrapper">
                         <a href="https://bato.dev/" target="_blank" class="header__logo">
-                            <img loading="lazy" src="/logo-removebg-preview.png" alt="Logo" class="logo">
+                            <img loading="lazy" src="logo-removebg-preview.png" alt="Logo" class="logo">
                         </a>
                         <div class="header__navigation-wrapper">
                             <nav class="header__navigation">

@@ -65,5 +65,5 @@
     margin-top: 20px;
 }
 .header__list li a span, .header__list li a, .header__buttons-wrapper a span{
-    color: white;
+    color: white !important;
 }
