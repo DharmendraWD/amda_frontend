@@ -67,3 +67,25 @@
 .header__list li a span, .header__list li a, .header__buttons-wrapper a span{
     color: white !important;
 }
+ .menuIconOfMegaMenu{
+    width: 50px;
+    border-radius: 7px;
+}
+.sideBarMenu ul a{
+    color: blue;
+    transition: .2s eas;
+}
+.sideBarMenu ul a{
+    color: blue;
+    transition: .2s ease-in-out;
+}
+.sideBarMenu ul a:hover{
+    color:rgb(37, 18, 115);
+scale: 1.07;
+}
+.sideBarMenuParent{
+font-weight: 600;
+}
+.sideBarMenuMainParent{
+    background: linear-gradient(to right, grey, transparent);
+}

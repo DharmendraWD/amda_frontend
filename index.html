@@ -6,26 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+   <script src="js/slider.js" defer></script>   <!--  //Linked Slider JS file-->
+
 
     <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
-    <link rel="stylesheet"
-        href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet"href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />  <!--  //CDN for Remix Icon-->
 
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!--  //Linked Style CSS file-->
+    <link rel="stylesheet" href="css/slider.css">   <!--  //Linked Slider CSS file-->
+    <link rel="stylesheet" href="css/utility.css">   <!--  //Linked Utility CSS file-->
 
 
 
 
     <style>
-        .marquee {
-            animation: scroll 30s linear infinite;
-        }
-
-        .marquee-wrapper:hover .marquee {
-            animation-play-state: paused;
-        }
-
         @keyframes scroll {
             0% {
                 transform: translateX(100%);
@@ -40,15 +35,13 @@
             --color-primary: rgba(5, 249, 255, 1);
             --transition: 0.4s;
         }
-
+/* .wrapper{
+    max-width: 1450px;
+} */
         .base-template__wrapper {
             /* min-height: calc(100dvh - 300px); */
             justify-content: flex-start;
             /* padding-bottom: 450px; */
-        }
-
-        .wrapper {
-            max-width: 1445px;
         }
 
         a {
@@ -66,7 +59,7 @@
             position: relative;
             padding: 0 20px 0 40px;
             min-height: 82px;
-            background-color: rgba(25, 27, 36, 1);
+            background-color: rgb(3 44 111);
         }
 
         .header__logo {
@@ -119,9 +112,9 @@
             left: 0;
             border-radius: 12px;
             padding: 30px 12px;
-            background-color: rgba(25, 27, 36, 1);
+            background-color:#011535;
             opacity: 0;
-
+z-index: 99;
             visibility: hidden;
             pointer-events: none;
             transition: var(--transition);
@@ -510,7 +503,7 @@
                 top: 110%;
                 left: 0;
                 padding: 20px;
-                background-color: rgba(25, 27, 36, 1);
+                background-color: rgb(3 44 111);
                 border-radius: 20px;
                 opacity: 0;
                 pointer-events: none;
@@ -618,7 +611,7 @@
 <body>
     <!-- top Bar  -->
     <nav
-        class="top-0 absolute z-50 w-full flex flex-wrap relative items-center justify-between px-2 py-3 navbar-expand-lg bg-blueGray-800">
+        class="top-0 absolute z-0 w-full flex flex-wrap relative items-center justify-between px-2 py-3 navbar-expand-lg bg-blueGray-800">
         <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
 
             <div class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none hidden bg-blueGray-800"
@@ -772,15 +765,8 @@
                                                     <!-- 1 -->
                                                     <li class="submenu-list__item has-submenu active">
                                                         <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="44"
-                                                                    height="44" viewBox="0 0 44 44" fill="none">
-                                                                    <rect width="44" height="44" rx="10" fill="#2BBE22"
-                                                                        fill-opacity="0.1" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M22 25.2969C25.866 25.2969 29 22.1629 29 18.2969C29 14.4309 25.866 11.2969 22 11.2969C18.134 11.2969 15 14.4309 15 18.2969C15 22.1629 18.134 25.2969 22 25.2969ZM17.9789 26.398C18.1885 26.1242 18.5747 26.0599 18.8621 26.2496L18.8772 26.259C18.8923 26.2683 18.9181 26.2837 18.9541 26.3039C19.0262 26.3443 19.1391 26.4035 19.29 26.4709C19.592 26.6057 20.0444 26.7721 20.6255 26.8852C21.0249 26.963 21.4852 27.0157 22 27.0157C22.7233 27.0157 23.3394 26.9117 23.8299 26.78C24.267 26.6628 24.6041 26.5235 24.8273 26.4167C24.9388 26.3633 25.0215 26.3182 25.0736 26.2882C25.0997 26.2732 25.1181 26.262 25.1286 26.2555L25.1377 26.2498C25.1373 26.25 25.1368 26.2503 25.1364 26.2506L25.1377 26.2497L25.1377 26.2498C25.4252 26.0593 25.8113 26.124 26.0211 26.398C26.2312 26.6725 26.1922 27.0631 25.9322 27.2908L25.931 27.2918L25.9249 27.2972L25.8986 27.3206C25.875 27.3418 25.8395 27.3739 25.7939 27.4158C25.7025 27.4998 25.5708 27.6232 25.4123 27.7785C25.0943 28.0898 24.6722 28.5253 24.252 29.0243C23.8298 29.5256 23.4214 30.0772 23.1214 30.6208C22.8157 31.1749 22.6561 31.6612 22.6561 32.0469C22.6561 32.4094 22.3623 32.7032 21.9998 32.7032C21.6374 32.7031 21.3436 32.4093 21.3436 32.0469C21.3436 31.6612 21.1841 31.1748 20.8785 30.6208C20.5786 30.0772 20.1701 29.5256 19.748 29.0243C19.3278 28.5253 18.9057 28.0898 18.5878 27.7785C18.4292 27.6232 18.2975 27.4998 18.2062 27.4158C18.1606 27.3739 18.1251 27.3418 18.1014 27.3206L18.0751 27.2972L18.069 27.2918L18.0677 27.2907C17.8076 27.063 17.7688 26.6725 17.9789 26.398Z"
-                                                                        fill="#2BBE22" />
-                                                                </svg>
+                                                            <div class="submenu-list__item-icon menuIconParent">
+                                                                <img src="assets/images/icons/overview.png" class="menuIconOfMegaMenu" alt="overview">
                                                             </div>
                                                             <a href="#" class="submenu-list__item-link">
                                                                 <span
@@ -795,31 +781,16 @@
                                                                     stroke="white" stroke-linecap="round"
                                                                     stroke-linejoin="round" />
                                                             </svg>
+                                                      
                                                         </div>
 
                                                     </li>
                                                     <!-- 2 -->
                                                     <li class="submenu-list__item has-submenu">
                                                         <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="44"
-                                                                    height="44" viewBox="0 0 44 44" fill="none">
-                                                                    <rect width="44" height="44" rx="10" fill="#47A9D6"
-                                                                        fill-opacity="0.1" />
-                                                                    <g clip-path="url(#clip0_850_7774)">
-                                                                        <path
-                                                                            d="M21.951 22.0515C24.0989 24.1994 27.8979 23.8828 30.4363 21.3444C32.9747 18.806 33.2913 15.007 31.1434 12.8591C28.9955 10.7112 25.1965 11.0278 22.6581 13.5662C20.1197 16.1046 19.8031 19.9036 21.951 22.0515ZM21.951 22.0515L17.3549 26.6472M24.435 12.4964L31.5061 19.5674M21.6066 15.3248L28.6776 22.3959M31.6825 14.7942L23.9044 22.5724M29.2077 12.3193L21.4295 20.0975M16.0439 26.8266L15.5489 26.8974C15.1205 26.9586 14.7235 27.157 14.4175 27.463L11.707 30.1736C11.3164 30.5641 11.3164 31.1973 11.707 31.5878L12.4141 32.2949C12.8046 32.6855 13.4378 32.6855 13.8283 32.2949L16.5389 29.5844C16.8448 29.2784 17.0433 28.8814 17.1045 28.453L17.1752 27.958C17.2695 27.298 16.7038 26.7324 16.0439 26.8266Z"
-                                                                            stroke="#47A9D6" stroke-width="1.5"
-                                                                            stroke-linecap="round"
-                                                                            stroke-linejoin="round" />
-                                                                    </g>
-                                                                    <defs>
-                                                                        <clipPath id="clip0_850_7774">
-                                                                            <rect width="24" height="24" fill="white"
-                                                                                transform="translate(10 10)" />
-                                                                        </clipPath>
-                                                                    </defs>
-                                                                </svg>
+                                                            <div class="submenu-list__item-icon menuIconParent">
+                                                                <img src="assets/images/icons/vision.png" class="menuIconOfMegaMenu" alt="overview">
+                                                               
                                                             </div>
                                                             <a href="#" class="submenu-list__item-link">
                                                                 <span class="submenu-list__item-title">Vision and
@@ -840,15 +811,9 @@
                                                     <!-- 3 -->
                                                     <li class="submenu-list__item has-submenu">
                                                         <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="44"
-                                                                    height="44" viewBox="0 0 44 44" fill="none">
-                                                                    <rect width="44" height="44" rx="10" fill="#FD742E"
-                                                                        fill-opacity="0.1" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M19.0059 12.0213C18.9847 11.9768 18.9342 11.9545 18.8871 11.9691C17.0996 12.5232 15.5165 13.542 14.2789 14.8841C14.2389 14.9276 14.2458 14.9959 14.2928 15.0317C15.5181 15.9639 16.4902 17.2119 17.0876 18.6544C17.106 18.6988 17.1532 18.7243 17.2004 18.7151C18.3855 18.4822 19.601 18.3339 20.8404 18.2767C20.9002 18.2739 20.9445 18.2197 20.9346 18.1606C20.5754 15.9988 19.9179 13.9378 19.0059 12.0213ZM13.223 16.2347C13.2542 16.1873 13.3189 16.1759 13.3642 16.2102C14.3153 16.9282 15.0839 17.8752 15.588 18.9692C15.6137 19.025 15.5824 19.0901 15.5231 19.1061C14.2262 19.4568 12.9715 19.9103 11.7684 20.4573C11.6963 20.49 11.6162 20.4305 11.6286 20.3523C11.8653 18.8502 12.4206 17.4539 13.223 16.2347ZM16.1167 20.6093C16.1058 20.5531 16.0496 20.5184 15.9943 20.5331C14.4465 20.9458 12.9622 21.5142 11.5592 22.2205C11.5248 22.2379 11.5035 22.2736 11.5046 22.3121C11.5633 24.3227 12.1872 26.1916 13.223 27.7653C13.2542 27.8127 13.3189 27.824 13.3642 27.7898C15.1171 26.4665 16.25 24.3655 16.25 22C16.25 21.5243 16.2042 21.0594 16.1167 20.6093ZM30.4777 15.9672C30.5223 15.9374 30.5823 15.9488 30.6129 15.9927C31.5039 17.2678 32.1189 18.7498 32.3715 20.3523C32.3838 20.4305 32.3038 20.49 32.2317 20.4573C30.8919 19.8482 29.4882 19.355 28.0334 18.9906C27.9724 18.9753 27.9401 18.9083 27.9674 18.8516C28.533 17.6803 29.4043 16.6843 30.4777 15.9672ZM29.5148 14.6667C29.558 14.7109 29.5502 14.7833 29.4995 14.8187C28.1613 15.7522 27.0963 17.0503 26.4484 18.5688C26.4299 18.612 26.3842 18.6371 26.3379 18.6289C25.1053 18.411 23.8413 18.2843 22.5529 18.2561C22.5042 18.255 22.4632 18.2191 22.4557 18.1709C22.1044 15.9088 21.4468 13.7481 20.5265 11.7324C20.4987 11.6715 20.537 11.6009 20.6033 11.5921C21.0602 11.5314 21.5265 11.5 22 11.5C24.9457 11.5 27.608 12.713 29.5148 14.6667ZM30.4777 28.0328C30.5222 28.0626 30.5823 28.0512 30.6129 28.0073C31.7468 26.3847 32.4338 24.4268 32.4955 22.3121C32.4966 22.2736 32.4753 22.2379 32.4409 22.2205C30.8943 21.4419 29.2488 20.8309 27.5283 20.4112C27.4742 20.3981 27.4198 20.4318 27.4083 20.4863C27.3046 20.9745 27.25 21.4809 27.25 22C27.25 24.516 28.5317 26.7327 30.4777 28.0328ZM25.8564 20.0683C25.9128 20.0778 25.9495 20.1326 25.9377 20.1886C25.8147 20.773 25.75 21.379 25.75 22C25.75 24.9732 27.2329 27.6001 29.4995 29.1813C29.5502 29.2167 29.558 29.2891 29.5148 29.3333C27.608 31.287 24.9457 32.5 22 32.5C21.5265 32.5 21.0602 32.4686 20.6033 32.4079C20.537 32.3991 20.4987 32.3285 20.5265 32.2677C21.9545 29.1399 22.7502 25.6629 22.7502 22C22.7502 21.2828 22.7196 20.5727 22.6599 19.8709C22.6548 19.8113 22.7026 19.7603 22.7624 19.7623C23.8129 19.7961 24.8457 19.8996 25.8564 20.0683ZM21.2502 22C21.2502 21.2783 21.2173 20.5643 21.1529 19.8593C21.1481 19.8066 21.1028 19.7669 21.0499 19.7691C19.896 19.8154 18.7638 19.9459 17.6591 20.1545C17.6042 20.1649 17.5687 20.2185 17.5797 20.2734C17.6914 20.8316 17.75 21.4089 17.75 22C17.75 24.8434 16.3937 27.3701 14.2928 28.9683C14.2458 29.0041 14.2389 29.0724 14.2789 29.1159C15.5165 30.458 17.0996 31.4768 18.8871 32.0309C18.9342 32.0455 18.9847 32.0232 19.0059 31.9787C20.4448 28.955 21.2502 25.5716 21.2502 22Z"
-                                                                        fill="#FD742E" />
-                                                                </svg>
+                                                            <div class="submenu-list__item-icon menuIconParent">
+                                                                <img src="assets/images/icons/executive.png" class="menuIconOfMegaMenu" alt="overview">
+
                                                             </div>
                                                             <a href="#" class="submenu-list__item-link">
                                                                 <span class="submenu-list__item-title">Executive
@@ -869,15 +834,9 @@
                                                     <!-- 4 -->
                                                     <li class="submenu-list__item has-submenu">
                                                         <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="44"
-                                                                    height="44" viewBox="0 0 44 44" fill="none">
-                                                                    <rect width="44" height="44" rx="10" fill="#D1F561"
-                                                                        fill-opacity="0.1" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M17.8844 28.5595L20.2808 25.3365L16.5271 23.1692L16.0752 24.198L14.9903 26.852C15.4957 26.9572 16.0127 27.1506 16.5313 27.45C17.0829 27.7685 17.5297 28.1454 17.8844 28.5595ZM16.952 29.8135C16.6761 29.4098 16.2922 29.044 15.7813 28.749C15.3164 28.4807 14.8533 28.3327 14.4064 28.2802L14.4061 28.2809C13.1144 28.1295 11.9577 28.7758 11.2827 29.619C11.1102 29.8346 11.1943 30.1428 11.4334 30.2809L16.6296 33.2809C16.8687 33.419 17.1776 33.3377 17.2781 33.0805C17.6575 32.1085 17.653 30.8391 16.9518 29.8137L16.952 29.8135ZM27.182 16.0551L21.1819 24.1247L17.1339 21.7876L21.1834 12.5678C22.0197 10.6637 24.3248 9.90827 26.1259 10.9481C27.9342 11.9922 28.4279 14.3795 27.182 16.0551ZM32.0002 28.5C32.0002 30.433 30.4332 32 28.5002 32C26.5672 32 25.0002 30.433 25.0002 28.5C25.0002 26.567 26.5672 25 28.5002 25C30.4332 25 32.0002 26.567 32.0002 28.5Z"
-                                                                        fill="#D1F561" />
-                                                                </svg>
+                                                            <div class="submenu-list__item-icon menuIconParent">
+                                                                <img src="assets/images/icons/member.png" class="menuIconOfMegaMenu" alt="overview">
+
                                                             </div>
                                                             <a href="#" class="submenu-list__item-link">
                                                                 <span class="submenu-list__item-title">Members of AMDA
@@ -898,15 +857,9 @@
                                                     <!-- 5 -->
                                                     <li class="submenu-list__item has-submenu">
                                                         <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="44"
-                                                                    height="44" viewBox="0 0 44 44" fill="none">
-                                                                    <rect width="44" height="44" rx="10" fill="#F31D1D"
-                                                                        fill-opacity="0.1" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M16.9998 25.9996C15.0729 24.8434 12.4639 25.9111 11.9764 28.1048L11.5407 30.0657C11.2631 31.3148 12.2126 32.4996 13.4921 32.4996H16.9998C18.9402 32.4996 20.4196 32.1922 21.3527 31.9183C21.7325 31.8068 22.0695 31.6114 22.3605 31.3579C22.1289 30.8705 21.9993 30.3253 21.9993 29.7499C21.9993 27.7286 23.5984 26.0808 25.6006 26.0028L28.4596 20.9345C28.4036 20.9181 28.3486 20.8947 28.2959 20.8643L24.8473 18.8734L21.0581 25.3992C21.0367 25.436 21.0167 25.4734 20.9967 25.5108C20.9804 25.5413 20.964 25.5719 20.9469 25.6021C20.7061 26.0282 19.6099 27.5657 16.9998 25.9996ZM23.5001 29.7263L23.4994 29.7276C23.5071 28.928 23.932 28.2281 24.5669 27.8352L24.5664 27.8361C24.9102 27.623 25.3157 27.5 25.75 27.5H30.25C31.4926 27.5 32.5 28.5074 32.5 29.75C32.5 30.9926 31.4926 32 30.25 32H25.75C24.5074 32 23.5 30.9926 23.5 29.75C23.5 29.7421 23.5 29.7342 23.5001 29.7263ZM25.6005 17.5762L29.0458 19.5652C29.0941 19.5931 29.1381 19.6255 29.1776 19.6617L30.752 16.8707C30.7116 16.856 30.6719 16.8375 30.6334 16.8153L27.1949 14.8303L25.6005 17.5762ZM27.9481 13.5331L31.3833 15.5162C31.4174 15.5359 31.4494 15.5578 31.4791 15.5817L32.5226 13.7319C33.0632 12.7736 32.7282 11.5587 31.7729 11.0128L31.7243 10.985C30.77 10.4397 29.5544 10.7667 29.0025 11.7172L27.9481 13.5331Z"
-                                                                        fill="#F31D1D" />
-                                                                </svg>
+                                                            <div class="submenu-list__item-icon menuIconParent">
+                                                                <img src="assets/images/icons/chairperson.png" class="menuIconOfMegaMenu" alt="overview">
+
                                                             </div>
                                                             <a href="#" class="submenu-list__item-link">
                                                                 <span class="submenu-list__item-title">Chairpersons of
@@ -927,15 +880,9 @@
                                                     <!-- 6 -->
                                                     <li class="submenu-list__item has-submenu">
                                                         <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="44"
-                                                                    height="44" viewBox="0 0 44 44" fill="none">
-                                                                    <rect width="44" height="44" rx="10" fill="#F31D1D"
-                                                                        fill-opacity="0.1" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M16.9998 25.9996C15.0729 24.8434 12.4639 25.9111 11.9764 28.1048L11.5407 30.0657C11.2631 31.3148 12.2126 32.4996 13.4921 32.4996H16.9998C18.9402 32.4996 20.4196 32.1922 21.3527 31.9183C21.7325 31.8068 22.0695 31.6114 22.3605 31.3579C22.1289 30.8705 21.9993 30.3253 21.9993 29.7499C21.9993 27.7286 23.5984 26.0808 25.6006 26.0028L28.4596 20.9345C28.4036 20.9181 28.3486 20.8947 28.2959 20.8643L24.8473 18.8734L21.0581 25.3992C21.0367 25.436 21.0167 25.4734 20.9967 25.5108C20.9804 25.5413 20.964 25.5719 20.9469 25.6021C20.7061 26.0282 19.6099 27.5657 16.9998 25.9996ZM23.5001 29.7263L23.4994 29.7276C23.5071 28.928 23.932 28.2281 24.5669 27.8352L24.5664 27.8361C24.9102 27.623 25.3157 27.5 25.75 27.5H30.25C31.4926 27.5 32.5 28.5074 32.5 29.75C32.5 30.9926 31.4926 32 30.25 32H25.75C24.5074 32 23.5 30.9926 23.5 29.75C23.5 29.7421 23.5 29.7342 23.5001 29.7263ZM25.6005 17.5762L29.0458 19.5652C29.0941 19.5931 29.1381 19.6255 29.1776 19.6617L30.752 16.8707C30.7116 16.856 30.6719 16.8375 30.6334 16.8153L27.1949 14.8303L25.6005 17.5762ZM27.9481 13.5331L31.3833 15.5162C31.4174 15.5359 31.4494 15.5578 31.4791 15.5817L32.5226 13.7319C33.0632 12.7736 32.7282 11.5587 31.7729 11.0128L31.7243 10.985C30.77 10.4397 29.5544 10.7667 29.0025 11.7172L27.9481 13.5331Z"
-                                                                        fill="#F31D1D" />
-                                                                </svg>
+                                                            <div class="submenu-list__item-icon menuIconParent">
+                                                                <img src="assets/images/icons/chairpersonmessage.png" class="menuIconOfMegaMenu" alt="overview">
+
                                                             </div>
                                                             <a href="#" class="submenu-list__item-link">
                                                                 <span class="submenu-list__item-title">Chairperson's
@@ -956,15 +903,9 @@
                                                     <!-- 7 -->
                                                     <li class="submenu-list__item has-submenu">
                                                         <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="44"
-                                                                    height="44" viewBox="0 0 44 44" fill="none">
-                                                                    <rect width="44" height="44" rx="10" fill="#F31D1D"
-                                                                        fill-opacity="0.1" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M16.9998 25.9996C15.0729 24.8434 12.4639 25.9111 11.9764 28.1048L11.5407 30.0657C11.2631 31.3148 12.2126 32.4996 13.4921 32.4996H16.9998C18.9402 32.4996 20.4196 32.1922 21.3527 31.9183C21.7325 31.8068 22.0695 31.6114 22.3605 31.3579C22.1289 30.8705 21.9993 30.3253 21.9993 29.7499C21.9993 27.7286 23.5984 26.0808 25.6006 26.0028L28.4596 20.9345C28.4036 20.9181 28.3486 20.8947 28.2959 20.8643L24.8473 18.8734L21.0581 25.3992C21.0367 25.436 21.0167 25.4734 20.9967 25.5108C20.9804 25.5413 20.964 25.5719 20.9469 25.6021C20.7061 26.0282 19.6099 27.5657 16.9998 25.9996ZM23.5001 29.7263L23.4994 29.7276C23.5071 28.928 23.932 28.2281 24.5669 27.8352L24.5664 27.8361C24.9102 27.623 25.3157 27.5 25.75 27.5H30.25C31.4926 27.5 32.5 28.5074 32.5 29.75C32.5 30.9926 31.4926 32 30.25 32H25.75C24.5074 32 23.5 30.9926 23.5 29.75C23.5 29.7421 23.5 29.7342 23.5001 29.7263ZM25.6005 17.5762L29.0458 19.5652C29.0941 19.5931 29.1381 19.6255 29.1776 19.6617L30.752 16.8707C30.7116 16.856 30.6719 16.8375 30.6334 16.8153L27.1949 14.8303L25.6005 17.5762ZM27.9481 13.5331L31.3833 15.5162C31.4174 15.5359 31.4494 15.5578 31.4791 15.5817L32.5226 13.7319C33.0632 12.7736 32.7282 11.5587 31.7729 11.0128L31.7243 10.985C30.77 10.4397 29.5544 10.7667 29.0025 11.7172L27.9481 13.5331Z"
-                                                                        fill="#F31D1D" />
-                                                                </svg>
+                                                            <div class="submenu-list__item-icon menuIconParent">
+                                                                <img src="assets/images/icons/organogram.png" class="menuIconOfMegaMenu" alt="overview">
+
                                                             </div>
                                                             <a href="#" class="submenu-list__item-link">
                                                                 <span class="submenu-list__item-title">Organogram</span>
@@ -984,15 +925,9 @@
                                                     <!-- 8 -->
                                                     <li class="submenu-list__item has-submenu">
                                                         <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="44"
-                                                                    height="44" viewBox="0 0 44 44" fill="none">
-                                                                    <rect width="44" height="44" rx="10" fill="#F31D1D"
-                                                                        fill-opacity="0.1" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M16.9998 25.9996C15.0729 24.8434 12.4639 25.9111 11.9764 28.1048L11.5407 30.0657C11.2631 31.3148 12.2126 32.4996 13.4921 32.4996H16.9998C18.9402 32.4996 20.4196 32.1922 21.3527 31.9183C21.7325 31.8068 22.0695 31.6114 22.3605 31.3579C22.1289 30.8705 21.9993 30.3253 21.9993 29.7499C21.9993 27.7286 23.5984 26.0808 25.6006 26.0028L28.4596 20.9345C28.4036 20.9181 28.3486 20.8947 28.2959 20.8643L24.8473 18.8734L21.0581 25.3992C21.0367 25.436 21.0167 25.4734 20.9967 25.5108C20.9804 25.5413 20.964 25.5719 20.9469 25.6021C20.7061 26.0282 19.6099 27.5657 16.9998 25.9996ZM23.5001 29.7263L23.4994 29.7276C23.5071 28.928 23.932 28.2281 24.5669 27.8352L24.5664 27.8361C24.9102 27.623 25.3157 27.5 25.75 27.5H30.25C31.4926 27.5 32.5 28.5074 32.5 29.75C32.5 30.9926 31.4926 32 30.25 32H25.75C24.5074 32 23.5 30.9926 23.5 29.75C23.5 29.7421 23.5 29.7342 23.5001 29.7263ZM25.6005 17.5762L29.0458 19.5652C29.0941 19.5931 29.1381 19.6255 29.1776 19.6617L30.752 16.8707C30.7116 16.856 30.6719 16.8375 30.6334 16.8153L27.1949 14.8303L25.6005 17.5762ZM27.9481 13.5331L31.3833 15.5162C31.4174 15.5359 31.4494 15.5578 31.4791 15.5817L32.5226 13.7319C33.0632 12.7736 32.7282 11.5587 31.7729 11.0128L31.7243 10.985C30.77 10.4397 29.5544 10.7667 29.0025 11.7172L27.9481 13.5331Z"
-                                                                        fill="#F31D1D" />
-                                                                </svg>
+                                                            <div class="submenu-list__item-icon menuIconParent">
+                                                                <img src="assets/images/icons/management.png" class="menuIconOfMegaMenu" alt="overview">
+
                                                             </div>
                                                             <a href="#" class="submenu-list__item-link">
                                                                 <span class="submenu-list__item-title">Management and
@@ -2781,18 +2716,11 @@
                                         </div>
                                     </li>
                                 </ul>
+
+                                
                             </nav>
 
-                            <div class="header__buttons-wrapper">
-                                <a href="#" class="header__button">
-                                    <span>SideBar</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14"
-                                        fill="none">
-                                        <path
-                                            d="M0.5 6.99996H15.5M15.5 6.99996L9.66667 1.16663M15.5 6.99996L9.66667 12.8333"
-                                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </a>
+                            <!-- <div class="header__buttons-wrapper">
                                 <a href="#" class="header__button">
                                     <span>lorem</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14"
@@ -2802,7 +2730,7 @@
                                             stroke="white" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="header__burger"><i></i><i></i><i></i></div>
                     </div>
@@ -2811,27 +2739,286 @@
         </div>
     </section>
 
-    <!-- marquee  -->
-    <!-- <div class="overflow-hidden whitespace-nowrap marquee-wrapper border rounded-md bg-white">
-        <div class="inline-block marquee px-4 py-2 text-blue-700 font-semibold">
-         Lorem ipsum dolor sit amet consectetur adipisicing elit. Et optio laborum quis a nisi, quasi fuga officia. Porro nobis nemo consequuntur, natus, nesciunt amet pariatur voluptate voluptatem et tenetur eius!
+<!-- SIDE BAR CODE  -->
+    <div x-data="setup()" x-init="$refs.loading.classList.add('hidden');">
+        <div class="flex antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">
+          <!-- Loading screen -->
+          <div
+            x-ref="loading"
+            class="fixed inset-0 z-50 flex items-center justify-center text-2xl font-semibold text-white bg-blue-600"
+          >
+            Loading.....
+          </div>
+  
+          <!-- Sidebar -->
+          <div
+            x-transition:enter="transform transition-transform duration-300"
+            x-transition:enter-start="-translate-x-full"
+            x-transition:enter-end="translate-x-0"
+            x-transition:leave="transform transition-transform duration-300"
+            x-transition:leave-start="translate-x-0"
+            x-transition:leave-end="-translate-x-full"
+            x-show="isSidebarOpen"
+            class="fixed inset-y-0 z-10 flex w-80"
+          >
+            <!-- Curvy shape -->
+            <svg
+              class="absolute inset-0 w-full h-full text-white"
+              style="filter: drop-shadow(10px 0 10px #00000030)"
+              preserveAspectRatio="none"
+              viewBox="0 0 309 800"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M268.487 0H0V800H247.32C207.957 725 207.975 492.294 268.487 367.647C329 243 314.906 53.4314 268.487 0Z"
+              />
+            </svg>
+            <!-- Sidebar content -->
+            <div class="z-10 flex flex-col flex-1">
+              <div class="flex items-center justify-between flex-shrink-0 w-64 p-4">
+                <!-- Logo -->
+                <a href="#">
+                  <img src="logo-removebg-preview.png" alt="">
+                 
+                </a>
+                <!-- Close btn -->
+                <button @click="isSidebarOpen = false" class="p-1 rounded-lg focus:outline-none focus:ring">
+                  <svg
+                    class="w-6 h-6"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  <span class="sr-only">Close sidebar</span>
+                </button>
+              </div>
+              <nav class="flex flex-col flex-1 w-64 p-4 mt-4 sideBarMenu">
+                <div>
+                <a href="#" class="flex items-center space-x-2 sideBarMenuMainParent p-[7px]">
+                 
+                  <div class="flex gap-2 items-center">
+                 <img class="iconOfSidebar w-[28px]" src="assets//images/icons/breaking-news.png" alt="">
+                    <span class="sideBarMenuParent">News</span>
                 </div>
+                </a>
+                <ul class="flex flex-col pl-[14px]">
+                <a href="">  Lorem ipsum dolor sit.</a>
+                <a href="">Lorem ipsum dolor sit.</a>
+                </ul>
+            </div>
+                <div>
+                <a href="#" class="flex items-center space-x-2 sideBarMenuMainParent p-[7px]">
+                 
+                  <div class="flex gap-2 items-center">
+                 <img class="iconOfSidebar w-[28px]" src="assets//images/icons/notice.png" alt="">
+                    <span class="sideBarMenuParent">Notice</span>
                 </div>
-    <div class="overflow-hidden whitespace-nowrap marquee-wrapper border rounded-md bg-white">
-        <div class="inline-block marquee px-4 py-2 text-blue-700 font-semibold">
-         Lorem ipsum dolor sit amet consectetur adipisicing elit. Et optio laborum quis a nisi, quasi fuga officia. Porro nobis nemo consequuntur, natus, nesciunt amet pariatur voluptate voluptatem et tenetur eius!
+                </a>
+                <ul class="flex flex-col pl-[14px]">
+                <a href="">  Lorem ipsum dolor sit.</a>
+                <a href="">Lorem ipsum dolor sit.</a>
+                <a href="">Lorem ipsum dolor sit.</a>
+                </ul>
+            </div>
+                <div>
+                <a href="#" class="flex items-center space-x-2 sideBarMenuMainParent p-[7px]">
+                 
+                  <div class="flex gap-2 items-center">
+                 <img class="iconOfSidebar w-[28px]" src="assets//images/icons/report.png" alt="">
+                    <span class="sideBarMenuParent">Reoprt</span>
                 </div>
-                </div> -->
+                </a>
+                <ul class="flex flex-col pl-[14px]">
+                <a href="">  Lorem ipsum dolor sit.</a>
+                <a href="">Lorem ipsum dolor sit.</a>
+                <a href="">  Lorem ipsum dolor sit.</a>
+                <a href="">Lorem ipsum dolor sit.</a>
+                </ul>
+            </div>
+                <div>
+                <a href="#" class="flex items-center space-x-2 sideBarMenuMainParent p-[7px]">
+                 
+                  <div class="flex gap-2 items-center">
+                 <img class="iconOfSidebar w-[28px]" src="assets//images/icons/working.png" alt="">
+                    <span class="sideBarMenuParent">What We do</span>
+                </div>
+                </a>
+                <ul class="flex flex-col pl-[14px]">
+                <a href="">  Lorem ipsum dolor sit.</a>
+                <a href="">Lorem ipsum dolor sit.</a>
+                </ul>
+            </div>
+              </nav>
+             
+            </div>
+          </div>
+          <main class="flex flex-col items-center justify-center flex-1">
+           <!-- sidebar open button  -->
+            <button @click="isSidebarOpen = true" class="p-2 text-white rounded-lg absolute top-[107px] right-[40px]">
+              <svg
+                class="w-6 h-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <span class="sr-only">Open menu</span>
+            </button>
+            <h1 class="sr-only">Home</h1>
+            <a href="https://github.com/kamona-ui" target="_blank">
+              <span class="sr-only">Kamona ui</span>
+        
+            </a>
+          </main>
+        </div>
+      </div>
+  
+   
 
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, asperiores harum! Perferendis, exercitationem
-    enim suscipit aliquid vel blanditiis nihil optio a, impedit mollitia ratione iusto placeat amet iure consequatur!
-    Nihil quis odit odio doloribus molestiae reiciendis, quibusdam voluptatem ab? Fugit unde consectetur nam, quis
-    aliquam reprehenderit corrupti accusantium veritatis quia, veniam odit culpa velit nisi illo? Totam accusantium
-    pariatur atque officia! Provident suscipit similique quasi, reiciendis aperiam placeat sequi delectus consequuntur
-    itaque est incidunt quam accusamus fuga reprehenderit deserunt quaerat? Ipsum nobis tenetur vitae quam in suscipit a
-    distinctio quibusdam, necessitatibus quos asperiores veniam modi accusantium consequuntur eius. Explicabo, esse!
+<!-- SLIDER  -->
+<div class="slider">
+
+
+    <div class="list">
+
+        <div class="item">
+            <img src="assets/images/slider/1.png" alt="">
+
+            <div class="content">
+                <div class="title">Lorem Lorem</div>
+                <div class="type">Lorem 1</div>
+                <div class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
+                </div>
+
+                <button class="buttonAnimated1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span>See More</span>
+                  </button>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="assets/images/slider/2.jpg" alt="">
+
+            <div class="content">
+                <div class="title">Lorem, ipsum.</div>
+                <div class="type">Lorem 2</div>
+                <div class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
+                </div>
+                <button class="buttonAnimated1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span>See More</span>
+                  </button>>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="assets/images/slider/3.png" alt="">
+
+            <div class="content">
+                <div class="title">Lorem, ipsum.</div>
+                <div class="type">Lorem 3</div>
+                <div class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
+                </div>
+                <button class="buttonAnimated1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                   <span>See More</span>
+                  </button>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="assets/images/slider/4.jpg" alt="">
+
+            <div class="content">
+                <div class="title">Lorem ipsum .</div>
+                <div class="type">Lorem 4</div>
+                <div class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
+                </div>
+                <button class="buttonAnimated1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                   <span>See More</span>
+                  </button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="assets/images/slider/5.jpg" alt="">
+
+            <div class="content">
+                <div class="title">AMDA Lorem</div>
+                <div class="type">Lorem 5</div>
+                <div class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
+                </div>
+                <button class="buttonAnimated1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                   <span>See More</span>
+                  </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="thumbnail">
+
+        <div class="item">
+            <img src="assets/images/slider/1.png" alt="">
+        </div>
+        <div class="item">
+            <img src="assets/images/slider/2.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="assets/images/slider/3.png" alt="">
+        </div>
+        <div class="item">
+            <img src="assets/images/slider/4.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="assets/images/slider/5.jpg" alt="">
+        </div>
+
+    </div>
+
+
+    <div class="nextPrevArrows">
+        <button class="prev"> < </button>
+        <button class="next"> > </button>
+    </div>
+
+
+</div>
+
+    
 </body>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.1/alpine.js"></script>
 
 <script>
     window.addEventListener("DOMContentLoaded", () => {
@@ -2920,6 +3107,11 @@
         });
     });
 
+    const setup = () => {
+        return {
+                isSidebarOpen: false,
+            }
+        }
 </script>
 
 </html>
