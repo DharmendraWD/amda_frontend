@@ -2599,35 +2599,6 @@
 
     </div>
 
-    <!-- <div class="WhatWeDo pt-[100px]">
-    <h1 class="festive-regular">What We Do</h1>
-    <div class="bg-zinc-50 overflow-hidden">
-        <div class="max-w-screen-xl 2xl:max-w-screen-3xl px-8 grid grid-cols-4 md:px-12 mx-auto py-12 lg:py-24 space-y-24 h-svh flex flex-col justify-center">
-
-          <a href="#_"> 
-            <img src="https://images.unsplash.com/photo-1530035415911-95194de4ebcc?q=80&amp;w=2670&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_"> 
-            <p class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom">Lorem, ipsum.</p>
-        </a>
-          
-          <a href="#_"> <img src="https://images.unsplash.com/photo-1487180144351-b8472da7d491?q=80&amp;w=2672&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D " class="rounded-xl  -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_"> 
-        
-            <p class="rounded-xl  -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom">Lorem, ipsum.</p>
-        </a>
-          
-          <a href="#_"> <img src="https://images.unsplash.com/photo-1586996292898-71f4036c4e07?q=80&amp;w=2670&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_"> 
-            <p class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom">Lorem, ipsum.</p>
-        
-        </a>
-          
-          <a href="#_"> <img src="https://images.unsplash.com/photo-1522775417749-29284fb89f43?q=80&amp;w=2574&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="rounded-xl  -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_">
-            <p class="rounded-xl  rotate-12 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom"> Lorem, ipsum.</p>
-        
-        </a>
-    
-        </div>
-    </div>
-  </div> -->
-
     <!-- TESTIMONIAL  -->
     <div class="windyLaxzy nouserselect ">
         <div class="title mainHeadingOfEach">AMDA Nepal Testimonial </div>
@@ -2821,6 +2792,50 @@
                 </defs>
             </svg>
 
+        </div>
+    </div>
+
+    <!-- FLOATING BUTTON  -->
+    <!-- Floating Button -->
+    <button class="floating-btn" id="openSheet">
+        <span>3</span>
+        <img src="assets/images/icons/notice2.png" alt="">
+    </button>
+
+    <!-- Bottom Sheet -->
+    <div class="bottom-sheet" id="bottomSheet">
+        <!-- <button class="close-btn" id="closeSheet">Close</button> -->
+
+        <button class="noselect close-btn CloseBtnbutton" id="closeSheet">
+            <span class="textOfCose">Close</span>
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path
+                        d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z">
+                    </path>
+                </svg></span></button>
+        <div class="content">
+            <div class="updateANdNewsP w-[100%] flex flex-col gap-[12px]">
+                <div class="updateAndNews">
+                    <span class="scroll-news-title">Notices (3)</span>
+                    <marquee behavior="" direction="" class="marqueeParent">
+                        <a href="">Lorem ipsum dolor sit amet.</a>
+                        <a href="">Lorem ipsum dolor sit amet.</a>
+                        <a href="">Lorem ipsum dolor sit amet.</a>
+                    </marquee>
+                    <div class="scroll-news-title-ViewAll bg-[transparent]"><a href="">View All</a></div>
+                </div>
+                <div class="updateAndNews">
+                    <span class="scroll-news-title">Updates (3)</span>
+                    <marquee behavior="" direction="" class="marqueeParent">
+                        <a href="">Lorem ipsum dolor sit amet.</a>
+                        <a href="">Lorem ipsum dolor sit amet.</a>
+                        <a href="">Lorem ipsum dolor sit amet.</a>
+                    </marquee>
+                    <div class="scroll-news-title-ViewAll bg-[transparent]"><a href="">View All</a></div>
+
+                </div>
+            </div>
         </div>
     </div>
 
@@ -3174,6 +3189,20 @@
             isSidebarOpen: false,
         }
     }
+
+    // BELLOW NEWS BUTTON JS
+    const openBtn = document.getElementById('openSheet');
+    const closeBtn = document.getElementById('closeSheet');
+    const sheet = document.getElementById('bottomSheet');
+
+    openBtn.addEventListener('click', () => {
+        sheet.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        sheet.classList.remove('active');
+    });
+    // BELLOW NEWS BUTTON JS END 
 </script>
 
 </html>

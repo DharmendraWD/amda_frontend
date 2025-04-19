@@ -673,7 +673,7 @@ input[type="checkbox"]:checked+.col-section h3::after {
     transition: ".2s ease-in-out"
 }
 
-.image-containerf:hover: {
+.image-containerf:hover {
     scale: 1.1;
 }
 
@@ -689,3 +689,215 @@ input[type="checkbox"]:checked+.col-section h3::after {
 }
 
 /* foooter end  */
+
+/* bellow floating btn  */
+@keyframes shakeScale {
+    0% {
+        transform: scale(1.08) translate(0, 0);
+    }
+
+    25% {
+        transform: scale(1.08) translate(3px, -3px);
+    }
+
+    50% {
+        transform: scale(1.08) translate(-3px, 3px);
+    }
+
+    75% {
+        transform: scale(1.08) translate(3px, 3px);
+    }
+
+    100% {
+        transform: scale(1.08) translate(0, 0);
+    }
+}
+
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+    z-index: 1000;
+    animation: shakeScale 1.5s infinite ease-in-out;
+}
+
+.floating-btn:hover {
+    background-color: #e68900;
+}
+
+.floating-btn span {
+    font-size: 25px;
+    position: absolute;
+    top: -22px;
+    background-color: red;
+    padding: 0 12px;
+    border-radius: 50%;
+}
+
+/* Bottom Sheet */
+.bottom-sheet {
+    position: fixed;
+    bottom: -50vh;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    background-color: #fff;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+    transition: bottom 0.4s ease;
+    z-index: 999;
+    padding: 20px;
+    box-sizing: border-box;
+
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: linear-gradient(90deg, #161a42eb 20%, #000000ab 80%);
+}
+
+.bottom-sheet.active {
+    bottom: 0;
+}
+
+/* Close Button inside the bottom sheet */
+.close-btn {
+    background: crimson;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+.content {
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+.scroll-news-title,
+.scroll-news-title-ViewAll {
+    float: left;
+    background: #ee001f;
+    padding: 10px;
+    position: relative;
+    color: #fff;
+    margin-right: 15px;
+    min-width: 160px;
+}
+
+.updateAndNews {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.marqueeParent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.marqueeParent a {
+    padding: 0 65px;
+    padding: 0 65px;
+    color: #cce1ff;
+    font-weight: 400;
+    letter-spacing: 2px;
+    transition: .2s ease-in-out;
+}
+
+.marqueeParent a:hover {
+    color: #021a3e;
+}
+
+.scroll-news-title:before {
+    position: absolute;
+    content: '';
+    border: 18px solid #ee001f;
+    border-top: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 28px solid transparent;
+    right: -38px;
+    top: 0;
+    z-index: 9;
+}
+
+/* close btn  */
+
+.CloseBtnbutton {
+    width: 150px;
+    position: relative;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    background: #e62222;
+}
+
+.CloseBtnbutton,
+button span {
+    transition: 200ms;
+}
+
+.CloseBtnbutton .textOfCose {
+    transform: translateX(35px);
+    color: white;
+    font-weight: bold;
+}
+
+.CloseBtnbutton .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    left: 0;
+    justify-content: center;
+}
+
+.CloseBtnbutton svg {
+    width: 15px;
+    fill: #eee;
+}
+
+.CloseBtnbutton:hover {
+    background: #ff3636;
+}
+
+.CloseBtnbutton:hover .textOfCose {
+    color: transparent;
+}
+
+.CloseBtnbutton:hover .icon {
+    width: 150px;
+    border-left: none;
+    transform: translateX(0);
+}
+
+.CloseBtnbutton:focus {
+    outline: none;
+}
+
+.CloseBtnbutton:active .icon svg {
+    transform: scale(0.8);
+}
+
+/* bellow floating btn end  */

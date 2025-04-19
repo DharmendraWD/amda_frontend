@@ -184,12 +184,11 @@ a.active {
     padding: 0 33px;
     z-index: 100;
     position: absolute;
-    bottom: 0px;
-    background: #5b5b5b;
-    background: linear-gradient(216deg, #002d71a4 30%, #4b6fa671, #f1f1f1, #fff) !important;
+    bottom: 55px;
+    background: #000000bf !important;
+    color: white;
     scale: 1.06;
     transition: .3s ease-in-out;
-    color: black;
     user-select: none;
 }
 
