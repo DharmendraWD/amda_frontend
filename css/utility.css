@@ -1,25 +1,35 @@
 #navBarMain {
-    position: relative;
-    transition: 0.4s ease-in-out;
-width: 100% !important;
+  position: relative;
+  transition: 0.4s ease-in-out;
+  width: 100% !important;
 }
-.fixed11 {
-    position: fixed !important;
-    top: 0;
-    background: linear-gradient(216deg, #722489 30%, #cfabdb, #f1f1f1, #fff) !important;
-    box-shadow: 0 0.125rem 1.75rem 0 rgb(0, 0, 0, 0.9) !important;
-  }
 
- .fixedforHmbrgr{
-    position: fixed !important;
-    top: 35px !important;
- }
- .festive-regular {
-    font-family: "Festive", cursive;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 30px;
-    letter-spacing: 3;
-    text-align: center;
-  }
-  
+.fixed11 {
+  position: fixed !important;
+  top: 0;
+  background: linear-gradient(216deg, #002d71 30%, #0357d646, #f1f1f1, #fff) !important;
+  backdrop-filter: blur(13px);
+  box-shadow: 0 0.125rem 1.75rem 0 rgba(0, 0, 0, 0.533) !important;
+}
+
+.fixedforHmbrgr {
+  position: fixed !important;
+  top: 35px !important;
+}
+
+.festive-regular {
+  font-family: "Festive", cursive;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  letter-spacing: 3;
+  text-align: center;
+}
+
+.mainHeadingOfEach {
+  letter-spacing: 4px;
+  font-size: 28px;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+}
