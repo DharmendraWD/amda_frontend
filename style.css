@@ -383,6 +383,7 @@ h4 {
 /* foooter  */
 footer a:hover {
     text-decoration: underline;
+    color: white !important;
 }
 
 footer {
@@ -415,7 +416,7 @@ input[type="checkbox"] {
 }
 
 .h3OfFooter {
-    color: #082b51;
+    color: #60adff;
     font-size: 13px;
     position: relative;
     z-index: 1;
@@ -436,7 +437,7 @@ input[type="checkbox"] {
 }
 
 .product-list a {
-    color: #555;
+    color: #a5a5a5;
     display: inline-block;
     font-size: 12px;
 }
