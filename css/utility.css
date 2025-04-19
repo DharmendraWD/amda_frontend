@@ -33,3 +33,7 @@
   color: white;
   font-weight: 600;
 }
+
+.nouserselect {
+  user-select: none !important;
+}

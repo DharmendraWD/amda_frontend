@@ -16,8 +16,13 @@
     <!--  //CDN for Remix Icon-->
 
     <link rel="stylesheet" href="style.css"> <!--  //Linked Style CSS file-->
+    <link rel="stylesheet" href="css/responsiveness.css"> <!--  //Linked responsiveness CSS file-->
+
     <link rel="stylesheet" href="css/slider.css"> <!--  //Linked Slider CSS file-->
     <link rel="stylesheet" href="css/utility.css"> <!--  //Linked Utility CSS file-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /><!--  ////fontawesome-->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -356,7 +361,8 @@
         }
 
         .logo {
-            background: white;
+            background: transparent;
+            min-width: 134px;
         }
 
         .submenu-content__link-address,
@@ -630,37 +636,37 @@
         class="top-0 absolute z-0 w-full flex flex-wrap relative items-center justify-between px-2 py-3 navbar-expand-lg bg-blueGray-800">
         <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
 
-            <div class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none hidden bg-blueGray-800"
+            <div class=" flex-grow items-center lg:bg-opacity-0 lg:shadow-none bg-blueGray-800 topNavDivParent"
                 id="example-collapse-navbar">
-                <ul class="flex flex-col lg:flex-row list-none mr-auto">
+                <ul class="flex flex-row list-none mr-auto firstText_OfTopNav">
 
                     <li class="flex items-center">
-                        <a class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                        <a class="text-white lg:hover:text-blueGray-200 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                             href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-js%2F"
                             target="_blank"><i
                                 class="lg:text-blueGray-200 text-blueGray-400 fab fa-facebook text-lg leading-lg"></i><span
                                 class="lg:hidden inline-block ml-2">Share</span></a>
                     </li>
                     <li class="flex items-center">
-                        <a class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                        <a class="text-white lg:hover:text-blueGray-200 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                             href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-js%2F&amp;text=Start%20your%20development%20with%20a%20Free%20Tailwind%20CSS%20and%20JavaScript%20UI%20Kit%20and%20Admin.%20Let%20Notus%20JS%20amaze%20you%20with%20its%20cool%20features%20and%20build%20tools%20and%20get%20your%20project%20to%20a%20whole%20new%20level."
                             target="_blank"><i
                                 class="lg:text-blueGray-200 text-blueGray-400 fab fa-twitter text-lg leading-lg"></i><span
                                 class="lg:hidden inline-block ml-2">Tweet</span></a>
                     </li>
                     <li class="flex items-center">
-                        <a class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                        <a class="text-white lg:hover:text-blueGray-200 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                             href="https://github.com/creativetimofficial/notus-js?ref=njs-register" target="_blank"><i
                                 class="lg:text-blueGray-200 text-blueGray-400 fab fa-github text-lg leading-lg"></i><span
                                 class="lg:hidden inline-block ml-2">Star</span></a>
                     </li>
                     <li class="flex items-center">
-                        <a class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs"
+                        <a class="text-white lg:hover:text-blueGray-200 px-3 py-4 lg:py-2 flex items-center text-xs"
                             href="">
                             Gokarneshwar-6 Jorpati, Kathmandu, Tel : +977-1-4910235,4911140 </a>
                     </li>
                 </ul>
-                <ul class="flex flex-col lg:flex-row list-none lg:ml-auto items-center">
+                <ul class="flex flex-row list-none lg:ml-auto items-center secondText_OfTopNav">
                     <li class="inline-block relative">
                         <!-- mobile view  -->
                         <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
@@ -732,15 +738,17 @@
                             <i class="fas fa-arrow-alt-circle-down"></i> Lorem
                         </a>
                     </li>
-                    <!-- SEARCH BAR -->
-                    <!-- <div class="flex border-1 border-blue-900 overflow-hidden max-w-md mx-auto">
+                    <!-- SEARCH BAR of first mini nav not appears in big screen-->
+                    <div class="flex border-1 border-blue-900 overflow-hidden max-w-md mx-auto searchBarOfMiniNav">
+
                         <input type="email" placeholder="Search Something..."
                             class="w-full outline-none bg-white text-gray-600 text-sm px-2 rounded-tl-[6px] rounded-bl-[6px]" />
                         <button type='button'
-                            class="flex items-center justify-center bg-[#007bff] px-3 text-sm text-white">
+                            class="flex items-center justify-center bg-[#002d71] px-3 text-sm text-white">
                             Search
                         </button>
-                    </div> -->
+
+                    </div>
 
 
                 </ul>
@@ -2140,12 +2148,12 @@
                                         </div>
                                     </li>
                                     <!-- SEARC HBAR  -->
-                                    <li class="header__list-item">
+                                    <li class="header__list-item MEGAmENUsEARCHbAR">
                                         <div class="flex border-1 border-blue-900 overflow-hidden max-w-md mx-auto">
                                             <input type="email" placeholder="Search Something..."
                                                 class="w-full outline-none bg-white text-gray-600 text-sm px-2 rounded-tl-[6px] rounded-bl-[6px]" />
                                             <button type='button'
-                                                class="flex items-center justify-center bg-[#007bff] px-3 text-sm text-white">
+                                                class="flex items-center justify-center bg-[#002d71] px-3 text-sm text-white">
                                                 Search
                                             </button>
                                         </div>
@@ -2619,19 +2627,170 @@
         </div>
     </div>
   </div> -->
-    <!-- svg blob wave  -->
-    <img src="assets/blob/pattern2.svg" class="h-[60px]" alt="">
+
+    <!-- TESTIMONIAL  -->
+    <div class="windyLaxzy nouserselect ">
+        <div class="title mainHeadingOfEach">AMDA Nepal Testimonial </div>
+
+        <div class="windyLaxzyCard_container">
+
+            <div class="windyLaxzyCard">
+                <div class="squareBox"></div>
+                <div class="round_box"></div>
+                <div class="img_box">
+                    <img src="https://randomuser.me/api/portraits/women/10.jpg" alt="">
+                </div>
+
+                <div class="user_content">
+                    <h5 class="name">Carry Johnshon</h5>
+                    <p class="post">UI/UX Designer</p>
+
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-solid fa-star transparent"></i>
+                    </div>
+                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit
+                        dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae
+                        delectus! Nobis.</p>
+                </div>
+            </div>
+
+            <div class="windyLaxzyCard">
+                <div class="squareBox"></div>
+                <div class="round_box"></div>
+                <div class="img_box">
+                    <img src="https://randomuser.me/api/portraits/men/47.jpg" alt="">
+                </div>
+
+                <div class="user_content">
+                    <h5 class="name">John Doe</h5>
+                    <p class="post">Web Designer</p>
+
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit
+                        dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae
+                        delectus! Nobis.</p>
+                </div>
+            </div>
+
+            <div class="windyLaxzyCard">
+                <div class="squareBox"></div>
+                <div class="round_box"></div>
+                <div class="img_box">
+                    <img src="https://randomuser.me/api/portraits/men/20.jpg" alt="">
+                </div>
+
+                <div class="user_content">
+                    <h5 class="name">Alex Carry</h5>
+                    <p class="post">Front-End Developer</p>
+
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-solid fa-star transparent"></i>
+                        <i class="fa-solid fa-star transparent"></i>
+                    </div>
+                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit
+                        dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae
+                        delectus! Nobis.</p>
+                </div>
+            </div>
+
+            <div class="windyLaxzyCard">
+                <div class="squareBox"></div>
+                <div class="round_box"></div>
+                <div class="img_box">
+                    <img src="https://randomuser.me/api/portraits/women/49.jpg" alt="">
+                </div>
+
+                <div class="user_content">
+                    <h5 class="name">Stiven Smith</h5>
+                    <p class="post">Back-End Developer</p>
+
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-solid fa-star transparent"></i>
+                    </div>
+                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit
+                        dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae
+                        delectus! Nobis.</p>
+                </div>
+            </div>
+
+            <div class="windyLaxzyCard">
+                <div class="squareBox"></div>
+                <div class="round_box"></div>
+                <div class="img_box">
+                    <img src="https://randomuser.me/api/portraits/women/57.jpg" alt="">
+                </div>
+
+                <div class="user_content">
+                    <h5 class="name">Carry Johnshon</h5>
+                    <p class="post">App Developer</p>
+
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-solid fa-star transparent"></i>
+                    </div>
+                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit
+                        dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae
+                        delectus! Nobis.</p>
+                </div>
+            </div>
+
+            <div class="windyLaxzyCard">
+                <div class="squareBox"></div>
+                <div class="round_box"></div>
+                <div class="img_box">
+                    <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="">
+                </div>
+
+                <div class="user_content">
+                    <h5 class="name">Alex Carry</h5>
+                    <p class="post">Web Analyst</p>
+
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit
+                        dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae
+                        delectus! Nobis.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <!-- NEWSLETTER  -->
     <div class="mx-auto">
-        <div class="relative isolate overflow-hidden bg-gray-900 px-6 py-[3rem] shadow-2xl xl:py-[3rem]">
+        <div class="nouserselect relative isolate overflow-hidden bg-gray-900 px-6 py-[3rem] shadow-2xl xl:py-[3rem]">
 
-            <h2 class="mx-auto max-w-2xl text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">Keep
-                Updated
+            <h2 class="mx-auto max-w-2xl text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">Sign up
+                for Newsletter
             </h2>
 
             <p class="mx-auto mt-2 max-w-xl text-center text-lg leading-8 text-gray-300">
-                Keep pace with SecureCloud
-                advancements! Join our mailing list for selective, noteworthy updates.
+                By subscribing to our mailing list you will always be update with the latest news from us.
             </p>
 
             <form class="mx-auto mt-10 flex max-w-md gap-x-4">
@@ -2641,9 +2800,12 @@
                     class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
                     placeholder="Enter your email">
 
-                <button type="submit"
+                <!-- <button type="submit"
                     class="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Notify
-                    me</button>
+                    me</button> -->
+                <button class="button22">
+                    SUBSCRIBE
+                </button>
             </form>
 
             <svg viewBox="0 0 1024 1024" class="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2"
@@ -2661,26 +2823,245 @@
 
         </div>
     </div>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio eum quisquam quibusdam. Non, libero corporis
-    aliquam ea voluptatem rerum saepe quasi voluptate dolorem, quia aut sit nobis mollitia et accusamus quod. Amet
-    libero, accusantium harum, eius error a sed voluptatem, officiis quod pariatur porro praesentium distinctio
-    veritatis enim numquam in voluptate voluptatum! Quos magni iste laborum vitae in quasi corrupti optio quidem
-    doloremque maxime eveniet facilis inventore assumenda provident, dicta voluptas accusamus ipsam magnam? Deleniti
-    consequatur blanditiis et labore quisquam quae enim repellat, aspernatur eligendi, magnam tempora similique impedit
-    odit voluptatem ipsa rerum, nobis accusamus magni dolore corporis vel optio recusandae? Quia amet voluptas nostrum
-    unde. Aliquid delectus dolor quas in voluptatibus dolore iure consequuntur ipsa animi veniam! Rem illum cum
-    accusantium, tempora distinctio deserunt reprehenderit! Id dolorum voluptatibus accusamus veritatis quidem adipisci
-    dolorem reiciendis, molestiae provident ullam eaque non illo modi similique! Officia quibusdam odio modi porro. Ad
-    voluptates autem natus laudantium incidunt harum, non in, eligendi dolore aut possimus aspernatur beatae alias
-    pariatur impedit! Aliquam excepturi ullam veniam, qui laboriosam inventore nemo eos voluptas pariatur corrupti minus
-    odit eligendi architecto exercitationem fugiat! Voluptatibus quibusdam modi omnis officia cum animi nobis laborum
-    libero quidem explicabo vitae earum perferendis, suscipit ea! Cupiditate commodi quasi labore ab aliquam tempora
-    facere? Officia atque laborum voluptatum consequuntur eligendi voluptatibus voluptatem vel doloremque! Numquam
-    delectus id quas, voluptates veritatis quia facere natus esse non suscipit dolorem cum, at unde deserunt doloribus
-    voluptatibus velit magnam quo. Ipsum pariatur minima amet quae porro vel tenetur et error est, a minus nemo facere
-    ad adipisci nostrum cupiditate sapiente illum reprehenderit, sequi corporis neque veritatis iste unde? Similique
-    saepe nemo, temporibus eos neque deserunt odit molestias mollitia soluta nulla praesentium excepturi sequi at
-    laudantium! Exercitationem numquam ducimus, repellendus amet odio, sed dignissimos quae autem ea quaerat itaque?
+
+    <!-- FOOTER  -->
+    <footer>
+        <div class="footer-content">
+            <nav class="footer-menu">
+                <div class="footer-col">
+                    <div class="item">
+                        <input type="checkbox" id="products">
+                        <div class="col-section">
+                            <label for="products">
+                                <h3 class="h3OfFooter">AMDA Nepal</h3>
+                            </label>
+                            <ul class="product-list">
+                                <li><a href="#">Gokarneshwar Municipality - 6, Jorpati</a></li>
+                                <li><a href="#">P.O. Box 8909, Kathmandu</a></li>
+                                <li><a href="#">Phone: +977 (1) 4910235, 4911140</a></li>
+                                <li><a href="#">E-mail: info@amda.org.np</a></li>
+                                <li><a href="#">Office Code: 101</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <div class="item">
+                        <input type="checkbox" id="store">
+                        <div class="col-section">
+                            <label for="store">
+                                <h3 class="h3OfFooter">AMDA Hospital</h3>
+                            </label>
+                            <ul class="product-list">
+                                <li><a href="#">Damak Municipality-2, Kharkhare, Jhapa</a></li>
+                                <li><a href="#">Phone: +977 (23) 580186, 581266</a></li>
+                                <li><a href="#">E-mail: ah.damak@amda.org.np</a></li>
+                                <li><a href="#">Office Code: 102</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="item">
+                        <input type="checkbox" id="education">
+                        <div class="col-section">
+                            <label for="education">
+                                <h3 class="h3OfFooter">Siddharth Children & Women Hospital</h3>
+                            </label>
+                            <ul class="product-list">
+                                <li><a href="#">Butwal Sub-Metrpolitan -7, Rupendehi</a></li>
+                                <li><a href="#">E-mail: scwh.butwal@amda.org.np</a></li>
+                                <li><a href="#">Phone: +977 (71) 502101, 502097</a></li>
+                                <li><a href="#">Office Code: 103</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="item item-padding-top">
+              <input type="checkbox" id="business">
+              <div class="col-section">
+                <label for="business">
+                <h3>AMDA Institute of Health Science, Damak</h3>  
+              </label>
+                <ul class="product-list">
+                  <li><a href="#">Damak Municipality-2, Kharkhare, Jhapa</a></li>
+                  <li><a href="#">Phone: +977 (23) 582186, 580355</a></li>
+                  <li><a href="#">E-mail: aihs.damak@amda.org.np</a></li>
+                  <li><a href="#">Office Code: 104</a></li>
+                </ul>
+              </div>
+            </div> -->
+                </div>
+
+                <div class="footer-col">
+                    <div class="item">
+                        <input type="checkbox" id="acccount">
+                        <div class="col-section">
+                            <label for="acccount">
+                                <h3 class="h3OfFooter">AMDA Mechi Hospital</h3>
+                            </label>
+                            <ul class="product-list">
+                                <li><a href="#">Mechinagar Municipality-10, Dhulabari, Jhapa</a></li>
+                                <li><a href="#">Phone:+977 (23) 564550</a></li>
+                                <li><a href="#">E-mail: amh.dhulabari@amda.org.np</a></li>
+                                <li><a href="#">Office Code: 105</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="item item-padding-top">
+              <input type="checkbox" id="values">
+              <div class="col-section">
+                <label for="values">
+                <h3>Shimazu Dental Clinic</h3>  
+              </label>
+                <ul class="product-list">
+                  <li><a href="#">Gokarneshwar Municipality - 6, Jorpati, Kathmandu</a></li>
+                  <li><a href="#">Phone: +977 (1) 4910235, 4911140</a></li>
+                  <li><a href="#">P.O. Box 8909, Kathmandu</a></li>
+                  <li><a href="#">E-mail: amda@amda.org.np</a></li>
+                  <li><a href="#">Privacy</a></li>
+                  <li><a href="#">Office Code: 106</a></li>
+                </ul>
+              </div>
+            </div> -->
+                </div>
+
+                <div class="footer-col">
+                    <div class="item">
+                        <input type="checkbox" id="about">
+                        <div class="col-section">
+                            <label for="about">
+                                <h3 class="h3OfFooter">AMDA Institute of Health Science, Butwal</h3>
+                            </label>
+                            <ul class="product-list">
+                                <li><a href="#">Butwal Sub-metropolitan city 7, Deepnagar, Butwal</a></li>
+                                <li><a href="#">Phone: +977 (71) 502101, 502097</a></li>
+                                <li><a href="#">E-mail: aihs.butwal@amda.org.np</a></li>
+                                <li><a href="#">Office Code: 107</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- -----------------    -->
+
+                <div class="footer-col">
+                    <input type="checkbox" id="values">
+                    <div class="col-section">
+                        <label for="values">
+                            <h3 class="h3OfFooter">Shimazu Dental Clinic</h3>
+                        </label>
+                        <ul class="product-list">
+                            <li><a href="#">Gokarneshwar Municipality - 6, Jorpati, Kathmandu</a></li>
+                            <li><a href="#">Phone: +977 (1) 4910235, 4911140</a></li>
+                            <li><a href="#">P.O. Box 8909, Kathmandu</a></li>
+                            <li><a href="#">E-mail: amda@amda.org.np</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Office Code: 106</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <input type="checkbox" id="business">
+                    <div class="col-section">
+                        <label for="business">
+                            <h3 class="h3OfFooter">AMDA Institute of Health Science, Damak</h3>
+                        </label>
+                        <ul class="product-list">
+                            <li><a href="#">Damak Municipality-2, Kharkhare, Jhapa</a></li>
+                            <li><a href="#">Phone: +977 (23) 582186, 580355</a></li>
+                            <li><a href="#">E-mail: aihs.damak@amda.org.np</a></li>
+                            <li><a href="#">Office Code: 104</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- -----------------    -->
+
+                <!-- QUICK LINKS  -->
+                <div class="footer-col">
+                    <input type="checkbox" id="QUICK">
+                    <div class="col-section">
+                        <label for="QUICK">
+                            <h3 class="h3OfFooter">Quick Links</h3>
+                        </label>
+                        <ul class="product-list">
+                            <li><a href="#">AMDA Staff Login (Office Portal)</a></li>
+                            <li><a href="#">Ministry of Health and Population</a></li>
+                            <li><a href="#">Department of Health Service</a></li>
+                            <li><a href="#">FHI 360 Nepal,</a> <a href="">FHI 360 Nepal,</a> <a href="">CTEVT</a></li>
+                            <li><a href="#">Nepal Nursing Council,</a> <a href="">FHI 360 Nepal,</a> <a
+                                    href="">CTEVT</a></li>
+                            <li><a href="#">Nepal Health Professional Council</a></li>
+                            <li><a href="#">Nepal Medical Council</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- QUICK LINKS 2 -->
+                <div class="footer-col">
+                    <input type="checkbox" id="QUICK">
+                    <div class="col-section">
+                        <label for="QUICK">
+                            <h3 class="h3OfFooter">Quick Links</h3>
+                        </label>
+                        <ul class="product-list">
+                            <li><a href="#">Social Welfare Council</a></li>
+                            <li><a href="#">Nepal Health Research Council (NHRC)</a></li>
+                            <li><a href="#">Logistics Management Divisions</a></li>
+                            <li><a href="#">National Public Health Laboratory</a></li>
+                            <li><a href="#">Inland Revenue Department</a></li>
+                            <li><a href="#">Social Security Fund</a></li>
+                            <li><a href="#">Employees Provident Fund</a></li>
+                            <li><a href="#"> Corona Info-Ministry of Health & Population</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="footer-col">
+                    <input type="checkbox" id="GOOGLEsCAN">
+                    <div class="col-section">
+                        <label for="GOOGLEsCAN">
+                            <h3 class="h3OfFooter">Scan Google map</h3>
+                        </label>
+                        <ul class="product-list">
+                            <img src="https://www.amda.org.np/ckfinder/userfiles/images/CO/GoogleMaps_CO.png" alt="">
+                        </ul>
+                    </div>
+                </div>
+                <!-- GOOGLE MAP  -->
+                <div class="footer-col">
+                    <input type="checkbox" id="GOOGLEmAPS">
+                    <div class="col-section">
+                        <label for="GOOGLEmAPS">
+                            <h3 class="h3OfFooter">Google Map Here</h3>
+                        </label>
+                        <!-- gm hhere  -->
+                    </div>
+                </div>
+
+            </nav>
+            <section class="footer-base">
+                <div class="footer-more-ways" x-ms-format-detection="none">
+                    Copyright © 2025.<a href="/retail/">Association of Medical Doctors of Asia-Nepal (AMDA Nepal).</a>,
+                    <span class="nowrap">All Rights Reversed. </span>.
+                </div>
+
+                <div class="footer-legal">
+                    <div class="footer-legal-copyright">Copyright © 2025 amda Inc. All rights reserved.</div>
+                    <div class="footer-legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms & Conditions</a>
+                        <a href="#">Site Map</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Newsletter</a>
+                        <a href="#">Gallery</a>
+                        <a href="#">Career</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
 
 </body>
 

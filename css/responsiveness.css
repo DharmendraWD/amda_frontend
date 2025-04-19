@@ -1,0 +1,58 @@
+@media (max-width: 1199px) {
+    .MEGAmENUsEARCHbAR {
+        display: none !important;
+    }
+
+    .searchBarOfMiniNav {
+        display: flex !important;
+    }
+
+    .topNavDivParent {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .firstText_OfTopNav {
+        margin: 0 !important;
+    }
+
+    .secondText_OfTopNav {
+        margin: 0 !important;
+    }
+
+    .header__navigation-wrapper {
+        display: flex !important;
+        justify-content: center;
+        padding: 0 !important;
+    }
+
+    #hmBrgr {
+        top: 131px !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    .searchBarOfMiniNav {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .base-template__wrapper {
+        min-height: 0 !important;
+    }
+}
+
+/* when more than 1200px */
+/* Styles for super large screens */
+@media (min-width: 1200px) {
+    .searchBarOfMiniNav {
+        display: none !important;
+    }
+
+    .topNavDivParent {
+        display: flex;
+    }
+
+}
