@@ -280,6 +280,21 @@
         </div>
     </nav>
 
+    <!-- SWITCHING NEWS AND UDATE -->
+    <div class="switchingParacard">
+        <div class="switchingParaleft">Updates</div>
+        <div class="switchingParacenter" id="paragraphContainer">
+            <div class="switchingParaparagraph active">📢 New Feature Released</div>
+            <div class="switchingParaparagraph">🚀 Launching Mobile App</div>
+            <div class="switchingParaparagraph">🔧 Maintenance Scheduled</div>
+            <div class="switchingParaparagraph">🎉 Milestone Reached</div>
+            <div class="switchingParaparagraph">📈 Traffic Increased 30%</div>
+        </div>
+        <div class="switchingPararight">
+            <a href="#">View All</a>
+        </div>
+    </div>
+
 
     <!-- SIDE BAR CODE  -->
     <div x-data="setup()" x-init="$refs.loading.classList.add('hidden');">
@@ -1416,6 +1431,28 @@
             marquee.setAttribute('scrollamount', '4');
         }, 3000);
     }
+
+    // switcing news and update 
+    const paragraphs = document.querySelectorAll('.switchingParaparagraph');
+    let current = 0;
+
+    setInterval(() => {
+        const currentParagraph = paragraphs[current];
+        currentParagraph.classList.remove('active');
+        currentParagraph.classList.add('exit');
+
+        current = (current + 1) % paragraphs.length;
+
+        const nextParagraph = paragraphs[current];
+        nextParagraph.classList.remove('exit');
+        nextParagraph.classList.add('active');
+
+        // Clean up previous one after animation
+        setTimeout(() => {
+            currentParagraph.classList.remove('exit');
+        }, 600);
+
+    }, 4000);
 </script>
 
 
