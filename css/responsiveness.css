@@ -1,5 +1,5 @@
 @media (max-width: 1199px) {
-    .MEGAmENUsEARCHbAR {
+    /* .MEGAmENUsEARCHbAR {
         display: none !important;
     }
 
@@ -30,29 +30,120 @@
 
     #hmBrgr {
         top: 131px !important;
+    } */
+}
+
+@media (max-width: 1180px) {
+    .menu {
+        gap: 0 !important;
     }
 }
 
-@media (max-width: 1000px) {
-    .searchBarOfMiniNav {
-        margin: 0 !important;
-        padding: 0 !important;
+@media (max-width: 950px) {
+    .search-bar {
+        align-items: center;
+        text-align: center;
+        display: flex;
+        justify-content: center;
     }
 
-    .base-template__wrapper {
-        min-height: 0 !important;
+    .menu {
+        display: flex;
+        justify-content: flex-start !important;
+        align-items: center !important;
+    }
+
+    #hmBrgr {
+        display: none;
+    }
+
+    .itemOfWHatwedoSec {
+        padding: 0px !important;
+    }
+
+    .nav-container .logo {
+        width: 70% !important;
+    }
+
+    .windyLaxzyCard_container {
+        padding: 0 12px !important;
+    }
+
+    .updateANdNewsP {
+        display: none !important;
+    }
+
+    #bottomSheet {
+        overflow: scroll !important;
+        padding: 9px;
+    }
+
+    .contentOfUpdates {
+        width: 100%;
+    }
+
+    .CloseBtnbutton .icon {
+        display: none;
+    }
+
+    .mobileUpdareNoticeheading {
+        color: white;
+        padding: 0 0 12px 0;
+        font-weight: 900;
+    }
+
+    .top-bar .right-side {
+        gap: 0 !important;
+    }
+
+    .windyLaxzy .title {
+        padding: 12px 12px 0 12px !important;
+    }
+
+    .mobileNoticeAndUpdate {
+        display: block !important;
+    }
+
+    .mobileNoticeAndUpdate div {
+        margin: 0 0 5px 0 !important;
+    }
+
+    .itemOfWHatwedoSec {
+        padding: 12px !important;
+    }
+
+    .img_name_post .name_post h3 {
+        font-size: 17px !important;
+        font-weight: 500 !important;
+    }
+
+    .content1,
+    .con1,
+    .content2 {
+        flex-direction: column !important;
+    }
+
+    .right-side button {
+        padding: 0 0.3rem !important;
+        gap: 0px !important;
+    }
+
+    .left-side span {
+        font-size: 9px !important;
     }
 }
+
+@media(max-width:501px) {}
 
 /* when more than 1200px */
 /* Styles for super large screens */
 @media (min-width: 1200px) {
-    .searchBarOfMiniNav {
+    /* .searchBarOfMiniNav {
         display: none !important;
     }
 
     .topNavDivParent {
         display: flex;
-    }
+    } */
 
 }

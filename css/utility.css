@@ -37,3 +37,9 @@
 .nouserselect {
   user-select: none !important;
 }
+
+.mobileNoticeAndUpdate {
+  display: none;
+}
+
+/* -------------------- */

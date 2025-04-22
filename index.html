@@ -20,6 +20,8 @@
 
     <link rel="stylesheet" href="css/slider.css"> <!--  //Linked Slider CSS file-->
     <link rel="stylesheet" href="css/utility.css"> <!--  //Linked Utility CSS file-->
+    <link rel="stylesheet" href="css/_navbar.css"> <!--  //Linked Utility CSS file-->
+    <link rel="stylesheet" href="css/_topnavbar.css"> <!--  //Linked Utility CSS file-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" /><!--  ////fontawesome-->
@@ -29,2167 +31,262 @@
     <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
 
 
-    <style>
-        @keyframes scroll {
-            0% {
-                transform: translateX(100%);
-            }
-
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        :root {
-            --color-primary: rgba(5, 249, 255, 1);
-            --transition: 0.4s;
-        }
-
-        /* .wrapper{
-    max-width: 1450px;
-} */
-        .base-template__wrapper {
-            /* min-height: calc(100dvh - 300px); */
-            justify-content: flex-start;
-            /* padding-bottom: 450px; */
-        }
-
-        a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-        .header {
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding: 0 20px 0 40px;
-            min-height: 82px;
-            /* background-color: rgb(3 44 111); */
-            background: #ffffff;
-            box-shadow: 5px 5px 6px #bebebe, -2px 8px 2px #ffffff;
-            z-index: 9;
-        }
-
-        .header__logo {
-            max-width: 90px;
-        }
-
-        .header__wrapper {
-            width: 100%;
-            display: flex;
-            align-items: center;
-        }
-
-        .header__navigation-wrapper {
-            display: flex;
-            width: 100%;
-            padding-left: 50px;
-        }
-
-        .header__list {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            margin: 0;
-            padding: 0;
-        }
-
-        .header__list-item {
-            display: flex;
-            padding: 30px 0 50px;
-            margin-bottom: -20px;
-            gap: 8px;
-            font-size: 16px;
-        }
-
-        .header__list-item>a {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: var(--transition);
-        }
-
-        .header__list-item>a svg path {
-            transition: var(--transition);
-        }
-
-        .header__list-item .submenu-wrapper {
-            position: absolute;
-            width: 100%;
-            top: 106%;
-            left: 0;
-            border-radius: 12px;
-            padding: 30px 12px;
-            background-color: #ffffff;
-            opacity: 0;
-            z-index: 99;
-            visibility: hidden;
-            pointer-events: none;
-            transition: var(--transition);
-        }
-
-        .header__buttons-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-left: auto;
-        }
-
-        .header__button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 42px;
-            width: max-content;
-            padding: 6px 20px;
-            border-radius: 100px;
-            gap: 8px;
-            font-size: 16px;
-            font-weight: 400;
-            transition: var(--transition);
-        }
-
-        .submenu-list__title {
-            width: max-content;
-            margin-bottom: 25px;
-            font-size: 12px;
-            text-transform: uppercase;
-            color: rgba(160, 161, 165, 1);
-        }
-
-        .submenu-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 295px;
-            padding-left: 0;
-        }
-
-        .submenu-list__item {
-            display: flex;
-            padding-right: 100px;
-            margin-right: -100px;
-            cursor: pointer;
-        }
-
-        .submenu-list__item-wrapper {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            padding: 6px 16px 6px 6px;
-            gap: 16px;
-            border-radius: 14px;
-            transition: var(--transition);
-        }
-
-        .submenu-list__item-wrapper>svg {
-            margin-left: auto;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            pointer-events: none;
-        }
-
-        .submenu-list__wrapper {
-            position: relative;
-        }
-
-        .submenu-content {
-            position: absolute;
-            right: 0;
-            top: 0;
-            max-width: calc(100% - 365px);
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transition: var(--transition);
-        }
-
-        .submenu-list__item.has-submenu.active .submenu-content {
-            opacity: 0;
-            visibility: visible;
-            pointer-events: none !important;
-        }
-
-        .submenu-list__item.has-submenu.active .submenu-content {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: none !important;
-        }
-
-        .submenu-list__item.has-submenu.active .submenu-list__item-wrapper {
-            background-color: rgba(255, 255, 255, 0.04);
-        }
-
-        .submenu-list__item.has-submenu.active .submenu-list__item-wrapper>svg {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-        }
-
-        .submenu-list__item-link {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .submenu-list__item-title {
-            font-size: 16px;
-            font-weight: 500;
-            color: #fff;
-        }
-
-        .submenu-list__item-icon {
-            display: flex;
-        }
-
-        .submenu-list__item-subtile {
-            font-size: 12px;
-            font-weight: 400;
-            color: rgba(160, 161, 165, 1);
-        }
-
-        .submenu-content__title {
-            width: max-content;
-            margin-bottom: 25px;
-            font-size: 12px;
-            text-transform: uppercase;
-            color: rgba(160, 161, 165, 1);
-        }
-
-        .submenu-content__list:not(.events) {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 0;
-        }
-
-        .submenu-content__list.events {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            padding: 0;
-        }
-
-        .submenu-content__list-item {
-            display: block;
-            border-radius: 20px;
-            background-color: rgba(255, 255, 255, 0.05);
-            cursor: auto;
-        }
-
-        .submenu-content__link {
-            display: flex;
-            flex-direction: column;
-            border-radius: 20px;
-            padding: 10px 10px 20px;
-            border: 1px solid transparent;
-            transition: var(--transition);
-        }
-
-        .submenu-content__link-img {
-            margin-bottom: 20px;
-            border-radius: 13px;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .submenu-content__link-img img {
-            transition: 0.4s ease-in;
-        }
-
-        .submenu-content__link-title {
-            padding: 0 10px;
-            font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 12px;
-        }
-
-        .submenu-content__link-text {
-            padding: 0 10px;
-            font-size: 12px;
-            color: rgba(160, 161, 165, 1);
-        }
-
-        .submenu-content__link-wrapper {
-            display: flex;
-            gap: 20px;
-            padding: 10px;
-            border-radius: 20px;
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        .submenu-content__list.events .submenu-content__link-img {
-            width: 100%;
-            max-width: 220px;
-            flex: 1;
-            border-radius: 13px;
-            margin-bottom: 0;
-        }
-
-        .submenu-content__info {
-            display: flex;
-            flex-direction: column;
-            flex: 1 0;
-        }
-
-        .submenu-content__category {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            width: max-content;
-            padding: 10px 20px;
-            margin-bottom: 20px;
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .submenu-content__list.events .submenu-content__link-title,
-        .submenu-content__list.events .submenu-content__link-text {
-            padding: 0;
-            margin-bottom: 12px;
-        }
-
-        .logo {
-            background: transparent;
-            min-width: 134px;
-        }
-
-        .submenu-content__link-address,
-        .submenu-content__link-date {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            margin-bottom: 12px;
-            font-size: 12px;
-            font-weight: 400;
-            color: rgba(160, 161, 165, 1);
-        }
-
-        .submenu-content__link-address span,
-        .submenu-content__link-date span {
-            line-height: 0.9;
-        }
-
-        .submenu-content__url {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: auto;
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 1);
-            font-size: 14px;
-            transition: var(--transition);
-
-            svg,
-            svg path {
-                transition: var(--transition);
-            }
-        }
-
-        .header__burger {
-            display: none;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 4px;
-            width: 24px;
-            margin-left: auto;
-        }
-
-        .header__burger i {
-            width: 100%;
-            height: 2px;
-            background-color: #fff;
-            border-radius: 13px;
-            transition: var(--transition);
-        }
-
-        .header__burger.active i:nth-child(1) {
-            transform: rotate(45deg) translate(4px, 4px);
-        }
-
-        .header__burger.active i:nth-child(2) {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .header__burger.active i:nth-child(3) {
-            transform: rotate(-45deg) translate(4px, -5px);
-        }
-
-        @media (hover: hover) and (pointer: fine) {
-            .header__list-item:hover .submenu-wrapper {
-                opacity: 1;
-                visibility: visible;
-                pointer-events: auto;
-            }
-
-            .header__list-item:hover~.header__list-item .submenu-wrapper {
-                display: none;
-            }
-
-            .header__list-item:hover>a,
-            .header__list-item:hover>a svg path {
-                color: var(--color-primary);
-                fill: var(--color-primary);
-            }
-
-            .header__button:hover {
-                background-color: rgba(255, 255, 255, 0.05);
-            }
-
-            .submenu-list__item.has-submenu:hover .submenu-list__item-wrapper {
-                background-color: rgba(255, 255, 255, 0.04);
-            }
-
-            .submenu-list__item-wrapper:hover {
-                background: #858585 !important;
-            }
-
-            .submenu-list__item-wrapper {
-                background: #8080802e !important;
-            }
-
-            .submenu-list__item.has-submenu:hover .submenu-content,
-            .submenu-list__item.has-submenu:hover .submenu-list__item-wrapper>svg {
-                opacity: 1;
-                visibility: visible;
-                pointer-events: auto;
-            }
-
-            .submenu-content__list-item:hover .submenu-content__link {
-                border-color: rgba(255, 255, 255, 0.3);
-            }
-
-            .submenu-content__list-item:hover .submenu-content__link-img img {
-                transform: scale(1.05);
-            }
-
-            .submenu-content__url:hover,
-            .submenu-content__url:hover svg path {
-                color: var(--color-primary);
-                stroke: var(--color-primary);
-            }
-
-            .submenu-content__url:hover svg {
-                transform: translateX(5px);
-            }
-        }
-
-        @media screen and (max-width: 1280px) {
-            .header__navigation-wrapper {
-                padding-left: 25px;
-            }
-
-            .submenu-list {
-                max-width: 250px;
-            }
-
-            .submenu-content {
-                max-width: calc(100% - 270px);
-            }
-
-            .submenu-content__url {
-                margin-bottom: 0;
-            }
-        }
-
-        @media screen and (max-width: 1024px) {
-            .base-template__wrapper {
-                min-height: 105vh;
-            }
-
-            .header {
-                min-height: 64px;
-                padding: 0 20px;
-            }
-
-            .header__burger {
-                display: flex;
-            }
-
-            .header__navigation-wrapper {
-                flex-direction: column;
-                align-items: center;
-                position: absolute;
-                top: 110%;
-                left: 0;
-                padding: 20px;
-                background-color: rgb(3 44 111);
-                border-radius: 20px;
-                opacity: 0;
-                pointer-events: none;
-                visibility: hidden;
-                transition: var(--transition);
-            }
-
-            .header__navigation-wrapper.open {
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .header__list {
-                flex-direction: column;
-                gap: 30px;
-            }
-
-            .header__buttons-wrapper {
-                flex-direction: column;
-                margin-left: unset;
-                margin-top: 50px;
-                gap: 8px;
-            }
-
-            .header__navigation,
-            .header__list {
-                width: 100%;
-            }
-
-            .header__list-item {
-                flex-direction: column;
-                width: 100%;
-                padding: 0;
-                gap: 0;
-                margin: 0;
-            }
-
-            .header__list-item.active a,
-            .header__list-item.active a>svg path {
-                fill: var(--color-primary);
-                color: var(--color-primary);
-            }
-
-            .header__list-item .submenu-wrapper {
-                position: static;
-                padding: 0;
-                max-height: 0;
-                border-radius: 0;
-                opacity: 1;
-                visibility: visible;
-                pointer-events: none !important;
-                overflow: hidden;
-                transition: max-height var(--transition);
-            }
-
-            .submenu-list {
-                width: 100%;
-                max-width: 100%;
-                gap: 5px;
-            }
-
-            .submenu-list__wrapper {
-                margin-top: 30px;
-            }
-
-            .submenu-list__item {
-                width: 100%;
-                padding: 0;
-                margin: 0;
-            }
-
-            .submenu-list__item:active .submenu-list__item-wrapper {
-                background-color: rgba(255, 255, 255, 0.04);
-            }
-
-            .submenu-list__item:active .submenu-list__item-wrapper>svg {
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .submenu-list__title {
-                display: none;
-            }
-
-            .submenu-content {
-                display: none;
-            }
-
-            .header__button {
-                border: 1px solid rgba(255, 255, 255, 1);
-            }
-        }
-
-        @media screen and (max-width: 767.9px) {
-
-            .header__buttons-wrapper,
-            .header__button {
-                width: 100%;
-            }
-        }
-    </style>
-
 </head>
 
 <body>
     <!-- top Bar  -->
-    <nav
-        class="top-0 absolute z-0 w-full flex flex-wrap relative items-center justify-between px-2 py-3 navbar-expand-lg bg-blueGray-800">
-        <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="left-side">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-github"></i>
+                <span>Gokarneshwar-6 Jorpati, Kathmandu, Tel : +977-1-4910235,4911140</span>
+            </div>
+            <div class="right-side">
+                <button><i class="fas fa-envelope"></i> CHECK MAIL</button>
+                <button><i class="fas fa-gavel"></i> E-BIDDING</button>
+                <button><i class="fas fa-book"></i> LOREM</button>
+            </div>
+        </div>
+    </div>
+    <!-- mega menu nav bar  -->
+    <nav id="navBarMain">
+        <div class="nav-container">
+            <img src="https://www.amda.org.np/image/logo.png" class="LOGO logo" alt="">
+            <div class="hamburger" id="megaMenuHmbrgr" onclick="toggleMenu(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="menu" id="megaMenuMenu">
+            <div class="menu-item">
+                HOME
+            </div>
+            <!-- ABOUT US -->
+            <div class="menu-item">
+                ABOUT
+                <div class="dropdown">
+                    <a href="#">About 1</a>
+                    <a href="#">About 2</a>
+                    <a href="#">About 3</a>
+                    <a href="#">About 4</a>
+                    <a href="#">About 5</a>
+                    <a href="#">About 6</a>
+                    <a href="#">About 7</a>
+                    <a href="#">About 8</a>
+                </div>
+            </div>
 
-            <div class=" flex-grow items-center lg:bg-opacity-0 lg:shadow-none bg-blueGray-800 topNavDivParent"
-                id="example-collapse-navbar">
-                <ul class="flex flex-row list-none mr-auto firstText_OfTopNav">
-
-                    <li class="flex items-center">
-                        <a class="text-white lg:hover:text-blueGray-200 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-js%2F"
-                            target="_blank"><i
-                                class="lg:text-blueGray-200 text-blueGray-400 fab fa-facebook text-lg leading-lg"></i><span
-                                class="lg:hidden inline-block ml-2">Share</span></a>
-                    </li>
-                    <li class="flex items-center">
-                        <a class="text-white lg:hover:text-blueGray-200 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-js%2F&amp;text=Start%20your%20development%20with%20a%20Free%20Tailwind%20CSS%20and%20JavaScript%20UI%20Kit%20and%20Admin.%20Let%20Notus%20JS%20amaze%20you%20with%20its%20cool%20features%20and%20build%20tools%20and%20get%20your%20project%20to%20a%20whole%20new%20level."
-                            target="_blank"><i
-                                class="lg:text-blueGray-200 text-blueGray-400 fab fa-twitter text-lg leading-lg"></i><span
-                                class="lg:hidden inline-block ml-2">Tweet</span></a>
-                    </li>
-                    <li class="flex items-center">
-                        <a class="text-white lg:hover:text-blueGray-200 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            href="https://github.com/creativetimofficial/notus-js?ref=njs-register" target="_blank"><i
-                                class="lg:text-blueGray-200 text-blueGray-400 fab fa-github text-lg leading-lg"></i><span
-                                class="lg:hidden inline-block ml-2">Star</span></a>
-                    </li>
-                    <li class="flex items-center">
-                        <a class="text-white lg:hover:text-blueGray-200 px-3 py-4 lg:py-2 flex items-center text-xs"
-                            href="">
-                            Gokarneshwar-6 Jorpati, Kathmandu, Tel : +977-1-4910235,4911140 </a>
-                    </li>
-                </ul>
-                <ul class="flex flex-row list-none lg:ml-auto items-center secondText_OfTopNav">
-                    <li class="inline-block relative">
-                        <!-- mobile view  -->
-                        <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
-                            id="demo-pages-dropdown">
-                            <span
-                                class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400">
-                                Admin Layout
-                            </span>
-                            <a href="#"
-                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
-                                Dashboard
-                            </a>
-                            <a href="#"
-                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
-                                Settings
-                            </a>
-                            <a href="#"
-                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
-                                Tables
-                            </a>
-                            <a href="#"
-                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
-                                Maps
-                            </a>
-                            <div class="h-0 mx-4 my-2 border border-solid border-blueGray-100"></div>
-                            <span
-                                class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400">
-                                Auth Layout
-                            </span>
-                            <a href="#"
-                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
-                                Login
-                            </a>
-                            <a href="#"
-                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
-                                Register
-                            </a>
-                            <div class="h-0 mx-4 my-2 border border-solid border-blueGray-100"></div>
-                            <span
-                                class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400">
-                                No Layout
-                            </span>
-                            <a href="#"
-                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
-                                Landing
-                            </a>
-                            <a href=".#"
-                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
-                                Profile
-                            </a>
+            <!-- WHAT WE DO  -->
+            <div class="menu-item">
+                WHAT WE DO
+                <div class="dropdown">
+                    <div class="inner-item">Option 1
+                        <div class="nested-dropdown">
+                            <a href="#">Sub 1</a>
+                            <a href="#">Sub 2</a>
+                            <a href="#">Sub 3</a>
+                            <a href="#">Sub 4</a>
+                            <a href="#">Sub 5</a>
                         </div>
-                    </li>
-
-                    <li class="flex items-center">
-                        <a class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
-                            href="#" target="_blank">
-                            <i class="fas fa-arrow-alt-circle-down"></i> Check Mail
-                        </a>
-                    </li>
-                    <li class="flex items-center">
-                        <a class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
-                            href="#" target="_blank">
-                            <i class="fas fa-arrow-alt-circle-down"></i> E-Biding
-                        </a>
-                    </li>
-                    <li class="flex items-center">
-                        <a class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
-                            href="#" target="_blank">
-                            <i class="fas fa-arrow-alt-circle-down"></i> Lorem
-                        </a>
-                    </li>
-                    <!-- SEARCH BAR of first mini nav not appears in big screen-->
-                    <div class="flex border-1 border-blue-900 overflow-hidden max-w-md mx-auto searchBarOfMiniNav">
-
-                        <input type="email" placeholder="Search Something..."
-                            class="w-full outline-none bg-white text-gray-600 text-sm px-2 rounded-tl-[6px] rounded-bl-[6px]" />
-                        <button type='button'
-                            class="flex items-center justify-center bg-[#002d71] px-3 text-sm text-white">
-                            Search
-                        </button>
-
                     </div>
+                    <div class="inner-item">Option 2
+                        <div class="nested-dropdown">
+                            <a href="#">Sub 1</a>
+                            <a href="#">Sub 2</a>
+                            <a href="#">Sub 3</a>
+                            <a href="#">Sub 4</a>
+                            <a href="#">Sub 5</a>
+                        </div>
+                    </div>
+                    <div class="inner-item">Option 3
+                        <div class="nested-dropdown">
+                            <a href="#">Sub 1</a>
+                            <a href="#">Sub 2</a>
+                            <a href="#">Sub 3</a>
+                            <a href="#">Sub 4</a>
+                            <a href="#">Sub 5</a>
+                        </div>
+                    </div>
+                    <div class="inner-item">Option 4
+                        <div class="nested-dropdown">
+                            <a href="#">Sub 1</a>
+                            <a href="#">Sub 2</a>
+                            <a href="#">Sub 3</a>
+                            <a href="#">Sub 4</a>
+                            <a href="#">Sub 5</a>
+                        </div>
+                    </div>
+                    <div class="inner-item">Option 5
+                        <div class="nested-dropdown">
+                            <a href="#">Sub 1</a>
+                            <a href="#">Sub 2</a>
+                            <a href="#">Sub 3</a>
+                            <a href="#">Sub 4</a>
+                            <a href="#">Sub 5</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- RESOURCES -->
+            <div class="menu-item">RESOURCES
+                <div class="dropdown">
+                    <a href="#">Option 1</a>
+                    <a href="#">Option 2</a>
+                    <a href="#">Option 3</a>
+                    <a href="#">Option 4</a>
+                    <div class="inner-item">Option 9
+                        <div class="nested-dropdown">
+                            <a href="#">Sub Option 1</a>
+                            <a href="#">Sub Option 2</a>
+                            <a href="#">Sub Option 3</a>
+                            <a href="#">Sub Option 4</a>
+                            <a href="#">Sub Option 5</a>
+                            <a href="#">Sub Option 6</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PUBLICATION  -->
+            <div class="menu-item">
+                PUBLICATION
+                <div class="dropdown">
+                    <div class="inner-item">Option 1
+                        <div class="nested-dropdown">
+                            <a href="#">Sub Option 1</a>
+                            <a href="#">Sub Option 2</a>
+                            <a href="#">Sub Option 3</a>
+                            <a href="#">Sub Option 4</a>
+                            <a href="#">Sub Option 5</a>
+                            <a href="#">Sub Option 6</a>
+                        </div>
+                    </div>
+                    <div class="inner-item">Option 2
+                        <div class="nested-dropdown">
+                            <a href="#">Sub Option 1</a>
+                            <a href="#">Sub Option 2</a>
+                            <a href="#">Sub Option 3</a>
+                            <a href="#">Sub Option 4</a>
+                            <a href="#">Sub Option 5</a>
+                            <a href="#">Sub Option 6</a>
+                        </div>
+                    </div>
+                    <div class="inner-item">Option 3
+                        <div class="nested-dropdown">
+                            <a href="#">Sub Option 1</a>
+                            <a href="#">Sub Option 2</a>
+                            <a href="#">Sub Option 3</a>
+                            <a href="#">Sub Option 4</a>
+                            <a href="#">Sub Option 5</a>
+                            <a href="#">Sub Option 6</a>
+                        </div>
+                    </div>
+                    <div class="inner-item">Option 4
+                        <div class="nested-dropdown">
+                            <a href="#">Sub Option 1</a>
+                            <a href="#">Sub Option 2</a>
+                            <a href="#">Sub Option 3</a>
+                            <a href="#">Sub Option 4</a>
+                            <a href="#">Sub Option 5</a>
+                            <a href="#">Sub Option 6</a>
+                        </div>
+                    </div>
+                    <div class="inner-item">Option 5
+                        <div class="nested-dropdown">
+                            <a href="#">Sub Option 1</a>
+                            <a href="#">Sub Option 2</a>
+                            <a href="#">Sub Option 3</a>
+                            <a href="#">Sub Option 4</a>
+                            <a href="#">Sub Option 5</a>
+                            <a href="#">Sub Option 6</a>
+                        </div>
+                    </div>
+                    <div class="inner-item">Option 6
+                        <div class="nested-dropdown">
+                            <a href="#">Sub Option 1</a>
+                            <a href="#">Sub Option 2</a>
+                            <a href="#">Sub Option 3</a>
+                            <a href="#">Sub Option 4</a>
+                            <a href="#">Sub Option 5</a>
+                            <a href="#">Sub Option 6</a>
+                        </div>
+                    </div>
+                    <div class="inner-item">Option 7
+                        <div class="nested-dropdown">
+                            <a href="#">Sub Option 1</a>
+                            <a href="#">Sub Option 2</a>
+                            <a href="#">Sub Option 3</a>
+                            <a href="#">Sub Option 4</a>
+                            <a href="#">Sub Option 5</a>
+                            <a href="#">Sub Option 6</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                </ul>
+            <div class="menu-item">
+                GALLARY
+                <div class="dropdown">
+                    <a href="#">About 1</a>
+                    <a href="#">About 2</a>
+                    <a href="#">About 3</a>
+                    <a href="#">About 4</a>
+                    <a href="#">About 5</a>
+                    <a href="#">About 6</a>
+                    <a href="#">About 7</a>
+                    <a href="#">About 8</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                VACANCY
+                <div class="dropdown">
+                    <a href="#">About 1</a>
+                    <a href="#">About 2</a>
+                    <a href="#">About 3</a>
+                    <a href="#">About 4</a>
+                    <a href="#">About 5</a>
+                    <a href="#">About 6</a>
+                    <a href="#">About 7</a>
+                    <a href="#">About 8</a>
+                </div>
+            </div>
+
+            <div class="search-bar">
+                <div class="input-container">
+                    <input type="text" name="text" class="inputSearch " placeholder="search...">
+                    <span class="icon">
+                        <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                                <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                                <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2"
+                                    stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                                <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                    </span>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Mega Menu  -->
-    <section class="base-template">
-        <div class="wrapper base-template__wrapper">
-
-
-            <div class="base-template__content">
-                <header class="header" id="navBarMain">
-                    <div class="header__wrapper">
-                        <a href="https://bato.dev/" target="_blank" class="header__logo">
-                            <img loading="lazy" src="logo-removebg-preview.png" alt="Logo" class="logo">
-                        </a>
-                        <div class="header__navigation-wrapper">
-                            <nav class="header__navigation">
-                                <ul class="header__list">
-                                    <!-- ABOOUT US  -->
-                                    <li class="header__list-item has-submenu">
-                                        <a href="#">
-                                            <span>About Us</span>
-                                            <i class="ri-arrow-drop-down-line arrowOfNavBar"></i>
-                                        </a>
-
-
-                                        <div class="submenu-wrapper">
-                                            <div class="submenu-list__wrapper">
-                                                <div class="submenu-list__title">Categories</div>
-                                                <ul class="submenu-list subMenuListOfFirstMenu">
-                                                    <!-- 1 -->
-                                                    <li class="submenu-list__item has-submenu active">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span
-                                                                    class="submenu-list__item-title">History/Overview</span>
-                                                                <span class="submenu-list__item-subtile">Lorem, ipsum
-                                                                    dolor.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-                                                    <!-- 2 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/vision.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Vision and
-                                                                    Mission</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-                                                    </li>
-                                                    <!-- 3 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/executive.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Executive
-                                                                    Committee</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                height="14" viewBox="0 0 16 14" fill="none">
-                                                                <path
-                                                                    d="M0.5 6.99996H15.5M15.5 6.99996L9.66667 1.16663M15.5 6.99996L9.66667 12.8333"
-                                                                    stroke="white" stroke-linecap="round"
-                                                                    stroke-linejoin="round" />
-                                                            </svg>
-                                                        </div>
-
-                                                    </li>
-                                                    <!-- 4 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/member.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Members of AMDA
-                                                                    Nepal</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-                                                    <!-- 5 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/chairperson.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Chairpersons of
-                                                                    AMDA Nepal</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-                                                    <!-- 6 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/chairpersonmessage.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Chairperson's
-                                                                    message</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-                                                    <!-- 7 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/organogram.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Organogram</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-                                                    <!-- 8 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/management.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Management and
-                                                                    Staff</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <!-- WHAT WE DO  -->
-
-                                    <li class="header__list-item has-submenu">
-                                        <a href="#">
-                                            <span>What We Do</span>
-                                            <i class="ri-arrow-drop-down-line arrowOfNavBar"></i>
-                                        </a>
-                                        <div class="submenu-wrapper">
-                                            <div class="submenu-list__wrapper">
-                                                <div class="submenu-list__title">Categories</div>
-                                                <ul class="submenu-list">
-                                                    <!-- 1 -->
-                                                    <li class="submenu-list__item has-submenu active">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Hospitals/Clinics
-                                                                    Activities</span>
-                                                                <span class="submenu-list__item-subtile">Lorem, ipsum
-                                                                    dolor.</span>
-                                                            </a>
-
-                                                        </div>
-                                                        <div class="submenu-content">
-                                                            <div class="submenu-content__title">Lorem ipsum dolor sit.
-                                                            </div>
-                                                            <ul class="submenu-content__list">
-                                                                <!-- 1 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_1.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            ospital</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor, sit amet consectetur
-                                                                            adipisicing elit. Odit, fuga pariatur?
-                                                                            Blanditiis?
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 2 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_2.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">
-                                                                            Sidhartha Children Hospital</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem, ipsum dolor sit amet consectetur
-                                                                            adipisicing elit. Repellat, natus modi.
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 3 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_3.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            Mechi Hospital</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor sit amet, consectetur
-                                                                            adipisicing elit. Porro, voluptatem.
-                                                                            Voluptas rerum odit voluptates!
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 4 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_3.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">Simazu
-                                                                            Dental Clinic</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor sit amet, consectetur
-                                                                            adipisicing elit. Porro, voluptatem.
-                                                                            Voluptas rerum odit voluptates!
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- 2 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Academic
-                                                                    Programs</span>
-                                                                <span class="submenu-list__item-subtile">Lorem, ipsum
-                                                                    dolor.</span>
-                                                            </a>
-
-                                                            <div class="submenu-content">
-                                                                <div class="submenu-content__title">Lorem, ipsum dolor.
-                                                                </div>
-                                                                <ul class="submenu-content__list">
-                                                                    <!-- 1 -->
-                                                                    <li class="submenu-content__list-item">
-                                                                        <a href="#" class="submenu-content__link">
-                                                                            <div class="submenu-content__link-img">
-                                                                                <img loading="lazy"
-                                                                                    src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/tennis_1.png"
-                                                                                    alt="Tennis">
-                                                                            </div>
-                                                                            <div class="submenu-content__link-title">
-                                                                                AMDA Institute of Science, Denmark</div>
-                                                                            <div class="submenu-content__link-text">
-                                                                                Lorem ipsum dolor, sit amet consectetur
-                                                                                adipisicing elit. Ullam nesciunt
-                                                                                recusandae consequuntur? Repellendus,
-                                                                                eligendi.
-                                                                            </div>
-                                                                        </a>
-                                                                    </li>
-                                                                    <!-- 2 -->
-                                                                    <li class="submenu-content__list-item">
-                                                                        <a href="#" class="submenu-content__link">
-                                                                            <div class="submenu-content__link-img">
-                                                                                <img loading="lazy"
-                                                                                    src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/tennis_2.png"
-                                                                                    alt="Tennis">
-                                                                            </div>
-                                                                            <div class="submenu-content__link-title">
-                                                                                AMDA Institute of Science, Butwal</div>
-                                                                            <div class="submenu-content__link-text">
-                                                                                Lorem ipsum dolor sit amet consectetur
-                                                                                adipisicing elit. Eaque doloribus nemo
-                                                                                ad dolorum, velit alias.
-                                                                            </div>
-                                                                        </a>
-                                                                    </li>
-
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <!-- 3 -->
-                                                    <li class="submenu-list__item has-submenu">
-
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <div class="submenu-list__item-icon">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Partnership and
-                                                                    Collaboration</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="submenu-content">
-                                                            <div class="submenu-content__title">lorem Dummy text Here
-                                                            </div>
-                                                            <ul class="submenu-content__list">
-                                                                <!-- 1 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_1.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            ospital</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor, sit amet consectetur
-                                                                            adipisicing elit. Odit, fuga pariatur?
-                                                                            Blanditiis?
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 2 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_2.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">
-                                                                            Sidhartha Children Hospital</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem, ipsum dolor sit amet consectetur
-                                                                            adipisicing elit. Repellat, natus modi.
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 3 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_3.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            Mechi Hospital</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor sit amet, consectetur
-                                                                            adipisicing elit. Porro, voluptatem.
-                                                                            Voluptas rerum odit voluptates!
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 4 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_3.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">Simazu
-                                                                            Dental Clinic</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor sit amet, consectetur
-                                                                            adipisicing elit. Porro, voluptatem.
-                                                                            Voluptas rerum odit voluptates!
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- 4 -->
-                                                    <li class="submenu-list__item has-submenu">
-
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <div class="submenu-list__item-icon">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Citizen
-                                                                    Charter</span>
-                                                                <span class="submenu-list__item-subtile">Lorem, ipsum
-                                                                    dolor.</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="submenu-content">
-                                                            <div class="submenu-content__title">Latest News</div>
-                                                            <ul class="submenu-content__list">
-                                                                <!-- 1 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/tennis_1.png"
-                                                                                alt="Tennis">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            Institute of Science, Denmark</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor, sit amet consectetur
-                                                                            adipisicing elit. Ullam nesciunt recusandae
-                                                                            consequuntur? Repellendus, eligendi.
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 2 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/tennis_2.png"
-                                                                                alt="Tennis">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            Institute of Science, Butwal</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor sit amet consectetur
-                                                                            adipisicing elit. Eaque doloribus nemo ad
-                                                                            dolorum, velit alias.
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- 5 -->
-                                                    <li class="submenu-list__item has-submenu">
-
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <div class="submenu-list__item-icon">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Social
-                                                                    responsibility </span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="submenu-content">
-                                                            <div class="submenu-content__title">Lorem ipsum dolor sit.
-                                                            </div>
-                                                            <ul class="submenu-content__list">
-                                                                <!-- 1 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/tennis_1.png"
-                                                                                alt="Tennis">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            Institute of Science, Denmark</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor, sit amet consectetur
-                                                                            adipisicing elit. Ullam nesciunt recusandae
-                                                                            consequuntur? Repellendus, eligendi.
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 2 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/tennis_2.png"
-                                                                                alt="Tennis">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            Institute of Science, Butwal</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor sit amet consectetur
-                                                                            adipisicing elit. Eaque doloribus nemo ad
-                                                                            dolorum, velit alias.
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- 6 -->
-                                                    <li class="submenu-list__item has-submenu">
-
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <div class="submenu-list__item-icon">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Emergency
-                                                                    Relief</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="submenu-content">
-                                                            <div class="submenu-content__title">Latest News</div>
-                                                            <ul class="submenu-content__list">
-                                                                <!-- 1 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/tennis_1.png"
-                                                                                alt="Tennis">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            Institute of Science, Denmark</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor, sit amet consectetur
-                                                                            adipisicing elit. Ullam nesciunt recusandae
-                                                                            consequuntur? Repellendus, eligendi.
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 2 -->
-
-
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-
-
-                                    <!-- RRESOURCES  -->
-
-                                    <li class="header__list-item has-submenu">
-                                        <a href="#">
-                                            <span>Resources</span>
-                                            <i class="ri-arrow-drop-down-line arrowOfNavBar"></i>
-                                        </a>
-
-                                        <div class="submenu-wrapper">
-                                            <div class="submenu-list__wrapper">
-                                                <div class="submenu-list__title">Categories</div>
-                                                <!-- without submenu menu  -->
-                                                <ul class="submenu-list subMenuListOfFirstMenu">
-                                                    <!-- 1 -->
-                                                    <li class="submenu-list__item has-submenu active">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <div class="submenu-list__item-icon">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span
-                                                                    class="submenu-list__item-title">History/Overview</span>
-                                                                <span class="submenu-list__item-subtile">Lorem, ipsum
-                                                                    dolor.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-                                                    <!-- 2 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <div class="submenu-list__item-icon">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Vision and
-                                                                    Mission</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-
-                                                        </div>
-                                                    </li>
-                                                    <!-- 3 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <div class="submenu-list__item-icon">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Executive
-                                                                    Committee</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-                                                    <!-- 4 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <div class="submenu-list__item-icon">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Members of AMDA
-                                                                    Nepal</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-                                                    <!-- 5 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <div class="submenu-list__item-icon">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Chairpersons of
-                                                                    AMDA Nepal</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-                                                    <!-- 6 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <div class="submenu-list__item-icon">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Chairperson's
-                                                                    message</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-                                                    <!-- 7 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <div class="submenu-list__item-icon">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Organogram</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-                                                    <!-- 8 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <div class="submenu-list__item-icon">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Management and
-                                                                    Staff</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-                                                </ul>
-                                                <!-- with hover submenu  -->
-                                                <ul class="submenu-list menuWrapper mthere">
-                                                    <!-- 1 -->
-                                                    <li
-                                                        class="submenu-list__item has-submenu active subMenuParentOfResoureses">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title"> dReport</span>
-                                                                <span class="submenu-list__item-subtile">Lorem, ipsum
-                                                                    dolor.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-
-                                                    <div class="subMenuOfMegaMenuOfResources">
-                                                        <!-- 1 -->
-                                                        <li class="submenu-list__item has-submenu active">
-                                                            <div class="submenu-list__item-wrapper">
-                                                                <div class="submenu-list__item-icon menuIconParent">
-                                                                    <img src="assets/images/icons/overview.png"
-                                                                        class="menuIconOfMegaMenu" alt="overview">
-                                                                </div>
-                                                                <a href="#" class="submenu-list__item-link">
-                                                                    <span
-                                                                        class="submenu-list__item-title">History/Overview</span>
-                                                                    <span class="submenu-list__item-subtile">Lorem,
-                                                                        ipsum dolor.</span>
-                                                                </a>
-                                                            </div>
-
-                                                        </li>
-                                                        <!-- 2 -->
-                                                        <li class="submenu-list__item has-submenu">
-                                                            <div class="submenu-list__item-wrapper">
-                                                                <div class="submenu-list__item-icon menuIconParent">
-                                                                    <img src="assets/images/icons/overview.png"
-                                                                        class="menuIconOfMegaMenu" alt="overview">
-                                                                </div>
-                                                                <div class="submenu-list__item-icon"></div>
-                                                                <a href="#" class="submenu-list__item-link">
-                                                                    <span class="submenu-list__item-title">Vision
-                                                                        and
-                                                                        Mission</span>
-                                                                    <span class="submenu-list__item-subtile">Lorem
-                                                                        ipsum
-                                                                        dolor sit.</span>
-                                                                </a>
-
-                                                            </div>
-                                                        </li>
-                                                        <!-- 3 -->
-                                                        <li class="submenu-list__item has-submenu">
-                                                            <div class="submenu-list__item-wrapper">
-                                                                <div class="submenu-list__item-icon menuIconParent">
-                                                                    <img src="assets/images/icons/overview.png"
-                                                                        class="menuIconOfMegaMenu" alt="overview">
-                                                                </div>
-                                                                <div class="submenu-list__item-icon">
-                                                                </div>
-                                                                <a href="#" class="submenu-list__item-link">
-                                                                    <span class="submenu-list__item-title">Executive
-                                                                        Committee</span>
-                                                                    <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                        dolor sit.</span>
-                                                                </a>
-                                                            </div>
-
-                                                        </li>
-                                                        <!-- 4 -->
-                                                        <li class="submenu-list__item has-submenu">
-                                                            <div class="submenu-list__item-wrapper">
-                                                                <div class="submenu-list__item-icon menuIconParent">
-                                                                    <img src="assets/images/icons/overview.png"
-                                                                        class="menuIconOfMegaMenu" alt="overview">
-                                                                </div>
-                                                                <div class="submenu-list__item-icon">
-                                                                </div>
-                                                                <a href="#" class="submenu-list__item-link">
-                                                                    <span class="submenu-list__item-title">Members of
-                                                                        AMDA Nepal</span>
-                                                                    <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                        dolor sit.</span>
-                                                                </a>
-                                                            </div>
-
-                                                        </li>
-                                                        <!-- 5 -->
-                                                        <li class="submenu-list__item has-submenu">
-                                                            <div class="submenu-list__item-wrapper">
-                                                                <div class="submenu-list__item-icon menuIconParent">
-                                                                    <img src="assets/images/icons/overview.png"
-                                                                        class="menuIconOfMegaMenu" alt="overview">
-                                                                </div>
-                                                                <div class="submenu-list__item-icon">
-                                                                </div>
-                                                                <a href="#" class="submenu-list__item-link">
-                                                                    <span class="submenu-list__item-title">Chairpersons
-                                                                        of AMDA Nepal</span>
-                                                                    <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                        dolor sit.</span>
-                                                                </a>
-                                                            </div>
-
-                                                        </li>
-                                                        <!-- 6 -->
-                                                        <li class="submenu-list__item has-submenu">
-                                                            <div class="submenu-list__item-wrapper">
-                                                                <div class="submenu-list__item-icon menuIconParent">
-                                                                    <img src="assets/images/icons/overview.png"
-                                                                        class="menuIconOfMegaMenu" alt="overview">
-                                                                </div>
-                                                                <div class="submenu-list__item-icon">
-                                                                </div>
-                                                                <a href="#" class="submenu-list__item-link">
-                                                                    <span class="submenu-list__item-title">Chairperson's
-                                                                        message</span>
-                                                                    <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                        dolor sit.</span>
-                                                                </a>
-                                                            </div>
-
-                                                        </li>
-                                                        <!-- 7 -->
-                                                        <li class="submenu-list__item has-submenu AUDITrEPORT">
-                                                            <div class="submenu-list__item-wrapper">
-                                                                <div class="submenu-list__item-icon menuIconParent">
-                                                                    <img src="assets/images/icons/overview.png"
-                                                                        class="menuIconOfMegaMenu" alt="overview">
-                                                                </div>
-                                                                <div class="submenu-list__item-icon">
-                                                                </div>
-                                                                <a href="#" class="submenu-list__item-link">
-                                                                    <span class="submenu-list__item-title">Audit
-                                                                        Report</span>
-                                                                    <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                        dolor sit.</span>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-
-                                                    </div>
-                                                </ul>
-
-
-
-
-                                            </div>
-                                        </div>
-                                    </li>
-
-
-                                    <!-- PUBLICATION  -->
-                                    <li class="header__list-item has-submenu">
-                                        <a href="#">
-                                            <span>Publication</span> <i
-                                                class="ri-arrow-drop-down-line arrowOfNavBar"></i>
-                                        </a>
-                                        <div class="submenu-wrapper">
-                                            <div class="submenu-list__wrapper">
-                                                <div class="submenu-list__title">Categories</div>
-                                                <ul class="submenu-list">
-                                                    <!-- 1 -->
-                                                    <li class="submenu-list__item has-submenu active">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Hospitals/Clinics
-                                                                    Activities</span>
-                                                                <span class="submenu-list__item-subtile">Lorem, ipsum
-                                                                    dolor.</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="submenu-content">
-                                                            <div class="submenu-content__title">Lorem ipsum dolor sit.
-                                                            </div>
-                                                            <ul class="submenu-content__list">
-                                                                <!-- 1 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_1.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            ospital</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor, sit amet consectetur
-                                                                            adipisicing elit. Odit, fuga pariatur?
-                                                                            Blanditiis?
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 2 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_2.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">
-                                                                            Sidhartha Children Hospital</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem, ipsum dolor sit amet consectetur
-                                                                            adipisicing elit. Repellat, natus modi.
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 3 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_3.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            Mechi Hospital</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor sit amet, consectetur
-                                                                            adipisicing elit. Porro, voluptatem.
-                                                                            Voluptas rerum odit voluptates!
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 4 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_3.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">Simazu
-                                                                            Dental Clinic</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor sit amet, consectetur
-                                                                            adipisicing elit. Porro, voluptatem.
-                                                                            Voluptas rerum odit voluptates!
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- 2 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Academic
-                                                                    Programs</span>
-                                                                <span class="submenu-list__item-subtile">Lorem, ipsum
-                                                                    dolor.</span>
-                                                            </a>
-                                                            <div class="submenu-content">
-                                                                <div class="submenu-content__title">Lorem, ipsum dolor.
-                                                                </div>
-                                                                <ul class="submenu-content__list">
-                                                                    <!-- 1 -->
-                                                                    <li class="submenu-content__list-item">
-                                                                        <a href="#" class="submenu-content__link">
-                                                                            <div class="submenu-content__link-img">
-                                                                                <img loading="lazy"
-                                                                                    src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/tennis_1.png"
-                                                                                    alt="Tennis">
-                                                                            </div>
-                                                                            <div class="submenu-content__link-title">
-                                                                                AMDA Institute of Science, Denmark</div>
-                                                                            <div class="submenu-content__link-text">
-                                                                                Lorem ipsum dolor, sit amet consectetur
-                                                                                adipisicing elit. Ullam nesciunt
-                                                                                recusandae consequuntur? Repellendus,
-                                                                                eligendi.
-                                                                            </div>
-                                                                        </a>
-                                                                    </li>
-                                                                    <!-- 2 -->
-                                                                    <li class="submenu-content__list-item">
-                                                                        <a href="#" class="submenu-content__link">
-                                                                            <div class="submenu-content__link-img">
-                                                                                <img loading="lazy"
-                                                                                    src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/tennis_2.png"
-                                                                                    alt="Tennis">
-                                                                            </div>
-                                                                            <div class="submenu-content__link-title">
-                                                                                AMDA Institute of Science, Butwal</div>
-                                                                            <div class="submenu-content__link-text">
-                                                                                Lorem ipsum dolor sit amet consectetur
-                                                                                adipisicing elit. Eaque doloribus nemo
-                                                                                ad dolorum, velit alias.
-                                                                            </div>
-                                                                        </a>
-                                                                    </li>
-
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <!-- 3 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Partnership and
-                                                                    Collaboration</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="submenu-content">
-                                                            <div class="submenu-content__title">lorem Dummy text Here
-                                                            </div>
-                                                            <ul class="submenu-content__list">
-                                                                <!-- 1 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_1.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            ospital</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor, sit amet consectetur
-                                                                            adipisicing elit. Odit, fuga pariatur?
-                                                                            Blanditiis?
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 2 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_2.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">
-                                                                            Sidhartha Children Hospital</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem, ipsum dolor sit amet consectetur
-                                                                            adipisicing elit. Repellat, natus modi.
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 3 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_3.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            Mechi Hospital</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor sit amet, consectetur
-                                                                            adipisicing elit. Porro, voluptatem.
-                                                                            Voluptas rerum odit voluptates!
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 4 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/golf_3.png"
-                                                                                alt="Golf">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">Simazu
-                                                                            Dental Clinic</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor sit amet, consectetur
-                                                                            adipisicing elit. Porro, voluptatem.
-                                                                            Voluptas rerum odit voluptates!
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- 4 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <div class="submenu-list__item-icon">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Citizen
-                                                                    Charter</span>
-                                                                <span class="submenu-list__item-subtile">Lorem, ipsum
-                                                                    dolor.</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="submenu-content">
-                                                            <div class="submenu-content__title">Latest News</div>
-                                                            <ul class="submenu-content__list">
-                                                                <!-- 1 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/tennis_1.png"
-                                                                                alt="Tennis">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            Institute of Science, Denmark</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor, sit amet consectetur
-                                                                            adipisicing elit. Ullam nesciunt recusandae
-                                                                            consequuntur? Repellendus, eligendi.
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 2 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/tennis_2.png"
-                                                                                alt="Tennis">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            Institute of Science, Butwal</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor sit amet consectetur
-                                                                            adipisicing elit. Eaque doloribus nemo ad
-                                                                            dolorum, velit alias.
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- 5 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <div class="submenu-list__item-icon">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Social
-                                                                    responsibility </span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="submenu-content">
-                                                            <div class="submenu-content__title">Lorem ipsum dolor sit.
-                                                            </div>
-                                                            <ul class="submenu-content__list">
-                                                                <!-- 1 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/tennis_1.png"
-                                                                                alt="Tennis">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            Institute of Science, Denmark</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor, sit amet consectetur
-                                                                            adipisicing elit. Ullam nesciunt recusandae
-                                                                            consequuntur? Repellendus, eligendi.
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 2 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/tennis_2.png"
-                                                                                alt="Tennis">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            Institute of Science, Butwal</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor sit amet consectetur
-                                                                            adipisicing elit. Eaque doloribus nemo ad
-                                                                            dolorum, velit alias.
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- 6 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <div class="submenu-list__item-icon">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Emergency
-                                                                    Relief</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="submenu-content">
-                                                            <div class="submenu-content__title">Latest News</div>
-                                                            <ul class="submenu-content__list">
-                                                                <!-- 1 -->
-                                                                <li class="submenu-content__list-item">
-                                                                    <a href="#" class="submenu-content__link">
-                                                                        <div class="submenu-content__link-img">
-                                                                            <img loading="lazy"
-                                                                                src="https://bato-web-agency.github.io/bato-shared/img/mega-menu/sports/tennis_1.png"
-                                                                                alt="Tennis">
-                                                                        </div>
-                                                                        <div class="submenu-content__link-title">AMDA
-                                                                            Institute of Science, Denmark</div>
-                                                                        <div class="submenu-content__link-text">
-                                                                            Lorem ipsum dolor, sit amet consectetur
-                                                                            adipisicing elit. Ullam nesciunt recusandae
-                                                                            consequuntur? Repellendus, eligendi.
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <!-- 2 -->
-
-
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-
-
-                                    <li class="header__list-item">
-                                        <a href="#">Gallary</a>
-                                    </li>
-
-                                    <!-- Vacancy  -->
-
-                                    <li class="header__list-item has-submenu">
-                                        <a href="#">
-                                            <span>Vacancy</span> <i class="ri-arrow-drop-down-line arrowOfNavBar"></i>
-
-                                        </a>
-
-                                        <div class="submenu-wrapper">
-                                            <div class="submenu-list__wrapper">
-                                                <div class="submenu-list__title">Categories</div>
-                                                <!-- without submenu menu  -->
-                                                <ul class="submenu-list subMenuListOfFirstMenu">
-                                                    <!-- 1 -->
-                                                    <li class="submenu-list__item has-submenu active">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span
-                                                                    class="submenu-list__item-title">History/Overview</span>
-                                                                <span class="submenu-list__item-subtile">Lorem, ipsum
-                                                                    dolor.</span>
-                                                            </a> <i class="ri-arrow-drop-down-line arrowOfNavBar"></i>
-
-                                                        </div>
-
-                                                    </li>
-                                                    <!-- 2 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Vision and
-                                                                    Mission</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-
-                                                        </div>
-                                                    </li>
-                                                    <!-- 3 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Executive
-                                                                    Committee</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-                                                    <!-- 4 -->
-                                                    <li class="submenu-list__item has-submenu">
-                                                        <div class="submenu-list__item-wrapper">
-                                                            <div class="submenu-list__item-icon menuIconParent">
-                                                                <img src="assets/images/icons/overview.png"
-                                                                    class="menuIconOfMegaMenu" alt="overview">
-                                                            </div>
-                                                            <a href="#" class="submenu-list__item-link">
-                                                                <span class="submenu-list__item-title">Members of AMDA
-                                                                    Nepal</span>
-                                                                <span class="submenu-list__item-subtile">Lorem ipsum
-                                                                    dolor sit.</span>
-                                                            </a>
-                                                        </div>
-
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <!-- SEARC HBAR  -->
-                                    <li class="header__list-item MEGAmENUsEARCHbAR">
-                                        <div class="flex border-1 border-blue-900 overflow-hidden max-w-md mx-auto">
-                                            <input type="email" placeholder="Search Something..."
-                                                class="w-full outline-none bg-white text-gray-600 text-sm px-2 rounded-tl-[6px] rounded-bl-[6px]" />
-                                            <button type='button'
-                                                class="flex items-center justify-center bg-[#002d71] px-3 text-sm text-white">
-                                                Search
-                                            </button>
-                                        </div>
-                                    </li>
-                                </ul>
-
-
-                            </nav>
-
-                            <!-- <div class="header__buttons-wrapper">
-                                <a href="#" class="header__button">
-                                    <span>lorem</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14"
-                                        fill="none">
-                                        <path
-                                            d="M0.5 6.99996H15.5M15.5 6.99996L9.66667 1.16663M15.5 6.99996L9.66667 12.8333"
-                                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </a>
-                            </div> -->
-
-                        </div>
-                        <div class="header__burger"><i></i><i></i><i></i></div>
-                    </div>
-                </header>
-            </div>
-        </div>
-    </section>
 
     <!-- SIDE BAR CODE  -->
     <div x-data="setup()" x-init="$refs.loading.classList.add('hidden');">
         <div class="flex antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">
             <!-- Loading screen -->
-            <div x-ref="loading"
-                class="fixed inset-0 z-50 flex items-center justify-center text-2xl font-semibold text-white bg-blue-600">
-                Loading.....
+            <div x-ref="loading" class="fixed inset-0 z-[50] flex items-center justify-center text-2xl font-semibold">
+
             </div>
 
             <!-- Sidebar -->
@@ -2197,7 +294,7 @@
                 x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
                 x-transition:leave="transform transition-transform duration-300"
                 x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full"
-                x-show="isSidebarOpen" class="fixed inset-y-0 z-10 flex w-80">
+                x-show="isSidebarOpen" class="fixed inset-y-0 z-[999999999999999999999] flex w-80">
                 <!-- Curvy shape -->
                 <svg class="absolute inset-0 w-full h-full text-white"
                     style="filter: drop-shadow(10px 0 10px #00000030)" preserveAspectRatio="none" viewBox="0 0 309 800"
@@ -2206,7 +303,7 @@
                         d="M268.487 0H0V800H247.32C207.957 725 207.975 492.294 268.487 367.647C329 243 314.906 53.4314 268.487 0Z" />
                 </svg>
                 <!-- Sidebar content -->
-                <div class="z-10 flex flex-col flex-1">
+                <div class="z-[10] flex flex-col flex-1">
                     <div class="flex items-center justify-between flex-shrink-0 w-64 p-4">
                         <!-- Logo -->
                         <a href="#">
@@ -2287,7 +384,8 @@
             <main class="flex flex-col items-center justify-center flex-1">
                 <!-- sidebar open button  -->
                 <button @click="isSidebarOpen = true"
-                    class="p-2 text-black rounded-lg absolute top-[97px] right-[100px] z-[9] " id="hmBrgr">
+                    class="p-2 text-black rounded-lg absolute top-[97px] right-[10px] z-[999999999999999999999] "
+                    id="hmBrgr">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2315,13 +413,11 @@
             <div class="item">
                 <img src="assets/images/slider/1.png" alt="">
 
-                <div class="content">
-                    <div class="title">Lorem Lorem</div>
-                    <div class="type">Lorem 1</div>
+                <div class="contentSlider">
+                    <!-- <div class="title">Lorem Lorem</div>
+                    <div class="type">Lorem 1</div> -->
                     <div class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum
-                        consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor
-                        sit amet consectetur adipisicing elit. Sequi, aut.
+                        Lorem ipsum dolor sit amet consectetur
                     </div>
 
                 </div>
@@ -2334,9 +430,7 @@
                     <div class="title">Lorem, ipsum.</div>
                     <div class="type">Lorem 2</div>
                     <div class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum
-                        consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor
-                        sit amet consectetur adipisicing elit. Sequi, aut.
+                        Lorem ipsum dolor sit amet consectetur.
                     </div>
 
                 </div>
@@ -2349,9 +443,7 @@
                     <div class="title">Lorem, ipsum.</div>
                     <div class="type">Lorem 3</div>
                     <div class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum
-                        consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor
-                        sit amet consectetur adipisicing elit. Sequi, aut.
+                        Lorem ipsum dolor sit amet consectetur a
                     </div>
 
                 </div>
@@ -2364,9 +456,7 @@
                     <div class="title">Lorem ipsum .</div>
                     <div class="type">Lorem 4</div>
                     <div class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum
-                        consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor
-                        sit amet consectetur adipisicing elit. Sequi, aut.
+                        Lorem ipsum dolor sit amet consectetur
                     </div>
 
                 </div>
@@ -2378,18 +468,14 @@
                     <div class="title">AMDA Lorem</div>
                     <div class="type">Lorem 5</div>
                     <div class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum
-                        consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor
-                        sit amet consectetur adipisicing elit. Sequi, aut.
+                        Lorem ipsum dolor sit amet consectetur a
                     </div>
 
                 </div>
             </div>
 
         </div>
-
-
-        <div class="thumbnail">
+        <div class="thumbnail hidden">
 
             <div class="item">
                 <img src="assets/images/slider/1.png" alt="">
@@ -2408,7 +494,6 @@
             </div>
 
         </div>
-
 
         <div class="nextPrevArrows">
             <button class="prev">
@@ -2808,26 +893,23 @@
 
         <button class="noselect close-btn CloseBtnbutton" id="closeSheet">
             <span class="textOfCose">Close</span>
-            <span class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path
-                        d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z">
-                    </path>
-                </svg></span></button>
-        <div class="content">
+        </button>
+        <div class="content contentOfUpdates">
             <div class="updateANdNewsP w-[100%] flex flex-col gap-[12px]">
                 <div class="updateAndNews">
                     <span class="scroll-news-title">Notices (3)</span>
-                    <marquee behavior="" direction="" class="marqueeParent">
-                        <a href="">Lorem ipsum dolor sit amet.</a>
-                        <a href="">Lorem ipsum dolor sit amet.</a>
-                        <a href="">Lorem ipsum dolor sit amet.</a>
+
+                    <marquee class="marqueeParent" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="4">
+                        <a href="#" onclick="pauseMarquee(event)">Item 1</a>
+                        <a href="#">Item 2</a>
+                        <a href="#">Item 3</a>
                     </marquee>
                     <div class="scroll-news-title-ViewAll bg-[transparent]"><a href="">View All</a></div>
                 </div>
                 <div class="updateAndNews">
                     <span class="scroll-news-title">Updates (3)</span>
-                    <marquee behavior="" direction="" class="marqueeParent">
+                    <marquee behavior="" direction="" class="marqueeParent" onmouseover="this.stop()"
+                        onmouseout="this.start()">
                         <a href="">Lorem ipsum dolor sit amet.</a>
                         <a href="">Lorem ipsum dolor sit amet.</a>
                         <a href="">Lorem ipsum dolor sit amet.</a>
@@ -2836,7 +918,91 @@
 
                 </div>
             </div>
+
+            <div class="mobileNoticeAndUpdate">
+                <div class="mobileUpdates">
+                    <h1 class="mobileUpdareNoticeheading">Updates(3) <span>View All <i
+                                class="ri-arrow-right-up-line"></i></span></h1>
+
+                    <div
+                        class=" p-6 bg-[transparent] border border-gray-200 rounded-lg shadow-sm  dark:border-gray-700">
+                        <p class="mb-3 font-normal text-white">Notice for Vendor
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Read more
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div
+                        class=" p-6 bg-[transparent] border border-gray-200 rounded-lg shadow-sm  dark:border-gray-700">
+                        <p class="mb-3 font-normal text-white">Notice_Electric
+                            Vehicle_0062/AMDA/AH/2081_82
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Read more
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class=" p-6 bg-[transparent] border border-gray-200 rounded-lg shadow-sm dark:border-gray-700">
+                        <p class="mb-3 font-normal text-white"> SelectionNotice of Extended
+                            Timeline for procurement of USG and OT TableTender</p>
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Read more
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+                <h1 class="mobileUpdareNoticeheading">Notice(2) <span>View All <i
+                            class="ri-arrow-right-up-line"></i></span></h1>
+
+                <div class=" p-6 bg-[transparent] border border-gray-200 rounded-lg shadow-sm  dark:border-gray-700">
+                    <p class="mb-3 font-normal text-white">Weekly News (W16_20250421_101_CO)
+                    </p>
+                    <a href="#"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+                </div>
+                <div
+                    class=" p-6 bg-[transparent] border border-gray-200 rounded-lg shadow-sm -800 dark:border-gray-700">
+                    <p class="mb-3 font-normal text-white">Week News (W-16_20250421_205_PWS)
+                    </p>
+                    <a href="#"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Read more
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
         </div>
+    </div>
     </div>
 
     <!-- FOOTER  -->
@@ -3089,99 +1255,115 @@
         // scorll navbar 
         window.addEventListener('scroll', function () {
             const navbar = document.getElementById('navBarMain');
-            const hmBrgr = document.getElementById('hmBrgr');
+            const logo = document.querySelector('.logo');
+            // const hmBrgr = document.getElementById('hmBrgr');
+            const megaMenuHmbrgrspan = document.getElementById('megaMenuHmbrgr');
             if (window.scrollY > 20) {
                 navbar.classList.add('fixed11');
                 hmBrgr.classList.add('fixedforHmbrgr');
+                hmBrgr.style.color = "white";
+                logo.style.maxWidth = "20%"
+                // changin megamenu hambrgr color when scrolled 
+                const spans = megaMenuHmbrgrspan.children;
+                for (let i = 0; i < spans.length; i++) {
+                    spans[i].style.backgroundColor = 'white';
+                }
             } else {
+                logo.style.maxWidth = "100%"
                 navbar.classList.remove('fixed11');
                 hmBrgr.classList.remove('fixedforHmbrgr');
+
+                // changin megamenu hambrgr color when scrolled back
+                const spans = megaMenuHmbrgrspan.children;
+                for (let i = 0; i < spans.length; i++) {
+                    spans[i].style.backgroundColor = 'black';
+                }
             }
         });
         // scorll navbar end
 
-        const burger = document.querySelector(".header__burger");
-        const navWrapper = document.querySelector(".header__navigation-wrapper");
+        //     const burger = document.querySelector(".header__burger");
+        //     const navWrapper = document.querySelector(".header__navigation-wrapper");
 
-        if (burger && navWrapper) {
-            burger.addEventListener("click", () => {
-                burger.classList.toggle("active");
-                navWrapper.classList.toggle("open");
-            });
-        }
+        //     if (burger && navWrapper) {
+        //         burger.addEventListener("click", () => {
+        //             burger.classList.toggle("active");
+        //             navWrapper.classList.toggle("open");
+        //         });
+        //     }
 
-        document.querySelectorAll(".header__list-item.has-submenu").forEach((item) => {
-            item.addEventListener("click", () => {
-                if (window.innerWidth > 1025) return;
+        //     document.querySelectorAll(".header__list-item.has-submenu").forEach((item) => {
+        //         item.addEventListener("click", () => {
+        //             if (window.innerWidth > 1025) return;
 
-                item.classList.toggle("active");
+        //             item.classList.toggle("active");
 
-                const submenuWrapper = item.querySelector(".submenu-wrapper");
+        //             const submenuWrapper = item.querySelector(".submenu-wrapper");
 
-                if (submenuWrapper.style.maxHeight) {
-                    submenuWrapper.style.maxHeight = null;
-                } else {
-                    submenuWrapper.style.maxHeight = `${submenuWrapper.scrollHeight}px`;
-                }
-            });
-        });
+        //             if (submenuWrapper.style.maxHeight) {
+        //                 submenuWrapper.style.maxHeight = null;
+        //             } else {
+        //                 submenuWrapper.style.maxHeight = `${submenuWrapper.scrollHeight}px`;
+        //             }
+        //         });
+        //     });
 
-        window.addEventListener("resize", () => {
-            if (window.innerWidth <= 1025) {
-                document
-                    .querySelectorAll(".header__list-item.has-submenu.active")
-                    .forEach((item) => {
-                        const submenuWrapper = item.querySelector(".submenu-wrapper");
+        //     window.addEventListener("resize", () => {
+        //         if (window.innerWidth <= 1025) {
+        //             document
+        //                 .querySelectorAll(".header__list-item.has-submenu.active")
+        //                 .forEach((item) => {
+        //                     const submenuWrapper = item.querySelector(".submenu-wrapper");
 
-                        if (submenuWrapper) {
-                            submenuWrapper.style.maxHeight = `${submenuWrapper.scrollHeight}px`;
-                        }
-                    });
-            } else {
-                document.querySelectorAll(".submenu-wrapper").forEach((wrapper) => {
-                    wrapper.style.maxHeight = null;
-                });
-            }
-        });
+        //                     if (submenuWrapper) {
+        //                         submenuWrapper.style.maxHeight = `${submenuWrapper.scrollHeight}px`;
+        //                     }
+        //                 });
+        //         } else {
+        //             document.querySelectorAll(".submenu-wrapper").forEach((wrapper) => {
+        //                 wrapper.style.maxHeight = null;
+        //             });
+        //         }
+        //     });
 
-        document.querySelectorAll('a[href="#"]').forEach((link) => {
-            link.addEventListener("click", (e) => {
-                e.preventDefault();
-            });
-        });
+        //     document.querySelectorAll('a[href="#"]').forEach((link) => {
+        //         link.addEventListener("click", (e) => {
+        //             e.preventDefault();
+        //         });
+        //     });
 
-        const submenuWrappers = document.querySelectorAll(".submenu-wrapper");
+        //     const submenuWrappers = document.querySelectorAll(".submenu-wrapper");
 
-        submenuWrappers.forEach((submenuWrapper) => {
-            const submenuItems = submenuWrapper.querySelectorAll(
-                ".submenu-list__item.has-submenu"
-            );
-            const defaultActiveItem = submenuWrapper.querySelector(
-                ".submenu-list__item.has-submenu.active"
-            );
+        //     submenuWrappers.forEach((submenuWrapper) => {
+        //         const submenuItems = submenuWrapper.querySelectorAll(
+        //             ".submenu-list__item.has-submenu"
+        //         );
+        //         const defaultActiveItem = submenuWrapper.querySelector(
+        //             ".submenu-list__item.has-submenu.active"
+        //         );
 
-            let returnTimeout;
+        //         let returnTimeout;
 
-            submenuItems.forEach((item) => {
-                item.addEventListener("mouseenter", () => {
-                    clearTimeout(returnTimeout);
+        //         submenuItems.forEach((item) => {
+        //             item.addEventListener("mouseenter", () => {
+        //                 clearTimeout(returnTimeout);
 
-                    submenuItems.forEach((i) => i.classList.remove("active"));
+        //                 submenuItems.forEach((i) => i.classList.remove("active"));
 
-                    item.classList.add("active");
-                });
-            });
+        //                 item.classList.add("active");
+        //             });
+        //         });
 
-            submenuWrapper.addEventListener("mouseleave", () => {
-                submenuItems.forEach((i) => i.classList.remove("active"));
+        //         submenuWrapper.addEventListener("mouseleave", () => {
+        //             submenuItems.forEach((i) => i.classList.remove("active"));
 
-                returnTimeout = setTimeout(() => {
-                    if (defaultActiveItem) {
-                        defaultActiveItem.classList.add("active");
-                    }
-                }, 300);
-            });
-        });
+        //             returnTimeout = setTimeout(() => {
+        //                 if (defaultActiveItem) {
+        //                     defaultActiveItem.classList.add("active");
+        //                 }
+        //             }, 300);
+        //         });
+        //     });
     });
 
     const setup = () => {
@@ -3203,13 +1385,38 @@
         sheet.classList.remove('active');
     });
     // BELLOW NEWS BUTTON JS END 
+    // <!-- MEGA MENU NAVBAR HAMBURGUR  -->
+    // function toggleMenu(icon) {
+    //     icon.classList.toggle('open');
+    //     const menu = document.querySelector('.menu');
+    //     menu.classList.toggle('show');
+    // }
+    // HAMBURGER HANDLER MEGA MENU 
+    function toggleMenu(icon) {
+        icon.classList.toggle('open');
+
+        const menu = document.querySelector('.menu');
+        menu.classList.toggle('show');
+
+        // Toggle height 100vh
+        if (menu.classList.contains('show')) {
+            menu.style.height = '100vh';
+        } else {
+            menu.style.height = '';
+        }
+    }
+    // MARQUEE PAUSER 
+    function pauseMarquee(event) {
+        event.preventDefault(); // prevent link from navigating
+        const marquee = event.target.closest('.marqueeParent');
+        marquee.setAttribute('scrollamount', '0');
+
+        // Optional: Resume after some time (e.g. 3 seconds)
+        setTimeout(() => {
+            marquee.setAttribute('scrollamount', '4');
+        }, 3000);
+    }
 </script>
 
-<script src="locomotive-scroll.min.js"></script>
-<script>
-    (function () {
-        var scroll = new LocomotiveScroll();
-    })();
-</script>
 
 </html>

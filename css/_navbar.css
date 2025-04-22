@@ -1,0 +1,254 @@
+#navBarMain {
+    width: 100%;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 4px 2rem;
+    z-index: 99999999;
+    position: relative;
+    box-shadow: -1px 0px 7px 0px black;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: rgb(0, 0, 0);
+    margin: 4px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.menu {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.menu-item {
+    position: relative;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 3px 3px 15px #bebebe, -2px 27px 8px #ffffff;
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    min-width: 200px;
+    z-index: 10;
+    animation: fadeIn 0.3s ease-in-out;
+    align-items: center;
+}
+
+.dropdown a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: 0.3s;
+    width: 100%;
+    border-radius: 11px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.dropdown a:hover {
+    color: #38bdf8;
+    background-color: #334155;
+    background: #edededa1;
+}
+
+.menu-item:hover>.dropdown {
+    display: flex;
+}
+
+.inner-item {
+    position: relative;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: 0.3s;
+    width: 100%;
+    border-radius: 11px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.inner-item:hover {
+    color: #38bdf8;
+    background-color: #334155;
+    background: #edededa1;
+}
+
+.nested-dropdown {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    animation: fadeIn 0.3s ease-in-out;
+    min-width: 200px;
+    text-align: center;
+
+}
+
+.inner-item:hover .nested-dropdown {
+    display: flex;
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.search-bar {
+    width: 200px;
+}
+
+@media (max-width: 950px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .menu {
+        overflow: hidden;
+        max-height: 0;
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .menu.show {
+        max-height: 1000px;
+        animation: dropdownOpen 0.5s ease-in-out;
+    }
+
+    @keyframes dropdownOpen {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    #hmBrgr {
+        top: 63px;
+        right: 0px;
+    }
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -10px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* searc  */
+/* From Uiverse.io by boryanakrasteva */
+.input-container {
+    width: 220px;
+    position: relative;
+    /* border-radius: 50px; */
+    background: #e0e0e0;
+    /* box-shadow: 0 -4px 6px -2px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.2); */
+    border: 1px solid #1e293b;
+
+}
+
+.icon {
+    position: absolute;
+    right: 10px;
+    top: calc(50% + 5px);
+    transform: translateY(calc(-50% - 5px));
+}
+
+.inputSearch {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    transition: .2s linear;
+    border: 2.5px solid black;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.input:focus {
+    outline: none;
+    border: 0.5px solid black;
+    box-shadow: -5px -5px 0px black;
+}
+
+.input-container:hover>.icon {
+    animation: anim 1s linear infinite;
+}
+
+@keyframes anim {
+
+    0%,
+    100% {
+        transform: translateY(calc(-50% - 5px)) scale(1);
+    }
+
+    50% {
+        transform: translateY(calc(-50% - 5px)) scale(1.1);
+    }
+}
