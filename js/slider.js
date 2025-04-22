@@ -46,4 +46,4 @@ function moveSlider(direction) {
 
 setInterval(() => {
     moveSlider('next')
-}, 4000);
+}, 14000);
