@@ -135,6 +135,11 @@
     .right-side button {
         font-size: 12px !important;
     }
+
+    .noticebtn {
+        padding: 2px 6px !important;
+        width: 70px !important;
+    }
 }
 
 @media(max-width:501px) {
