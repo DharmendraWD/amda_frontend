@@ -42,4 +42,9 @@
   display: none;
 }
 
+.nested-dropdown a,
+.dropdown a {
+  user-select: none !important;
+}
+
 /* -------------------- */
