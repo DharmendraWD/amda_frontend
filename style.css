@@ -944,6 +944,10 @@ button span {
     line-height: 60px;
 }
 
+.whytochooseus {
+    padding: 30px 50px;
+}
+
 .switchingParaparagraph.active {
     opacity: 1;
     transform: translateY(0);

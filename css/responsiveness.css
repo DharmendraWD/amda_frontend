@@ -140,6 +140,9 @@
         padding: 2px 6px !important;
         width: 70px !important;
     }
+    .whytochooseus{
+        padding: 30px 10px;
+    }
 }
 
 @media(max-width:501px) {
