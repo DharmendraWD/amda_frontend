@@ -970,10 +970,6 @@ button span {
 }
 
 @media (max-width: 768px) {
-    .switchingParacard {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 
     .switchingParacenter {
         width: 100%;

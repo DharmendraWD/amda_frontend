@@ -137,7 +137,11 @@
     }
 }
 
-@media(max-width:501px) {}
+@media(max-width:501px) {
+    .switchingParacard {
+        padding: 0 .3rem !important;
+    }
+}
 
 /* when more than 1200px */
 /* Styles for super large screens */
