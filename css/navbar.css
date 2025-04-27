@@ -194,6 +194,12 @@ ul {
     }
 }
 
+@media(max-width:400px) {
+    #topNum {
+        display: none;
+    }
+}
+
 /* hamburger  */
 .hamburgerFirstNav {
     width: 30px;
