@@ -8,7 +8,7 @@
   position: fixed !important;
   top: 0;
   /* background: linear-gradient(216deg, #002d71 30%, #0357d6, #f1f1f1, #fff) !important; */
-  backdrop-filter: blur(13px);
+  /* backdrop-filter: blur(13px); */
   box-shadow: 0 0.125rem 1.75rem 0 rgba(0, 0, 0, 0.533) !important;
 }
 

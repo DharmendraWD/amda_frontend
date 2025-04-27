@@ -910,10 +910,10 @@ button span {
     justify-content: space-between;
     align-items: center;
     padding: 0 1.5rem;
-    border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
     width: 100%;
     overflow: hidden;
+    background: #f6f6f6;
     gap: 1rem;
     flex-wrap: wrap;
 }

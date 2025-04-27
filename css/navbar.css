@@ -1,186 +1,247 @@
 #navBarMain {
-    width: 100%;
+    /* width: 100%;
     background: #ffffff;
     color: rgb(0, 0, 0);
     padding: 4px 2rem;
     z-index: 99999999;
     position: relative;
-    box-shadow: -1px 0px 7px 0px black;
+    box-shadow: -1px 0px 7px 0px black; */
 }
 
-.nav-container {
+li>ul {
+    transform: translatex(100%) scale(0)
+}
+
+input {
+    border: none !important;
+}
+
+.deskTopNavBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.space-around {
+    justify-content: space-around !important;
+}
+
+li:hover>ul {
+    transform: translatex(101%) scale(1)
+}
+
+li>button svg {
+    transform: rotate(-90deg)
+}
+
+li:hover>button svg {
+    transform: rotate(-270deg)
+}
+
+.group:hover .group-hover\:scale-100 {
+    transform: scale(1)
+}
+
+.searchhSecParent,
+.searchInput {
+    background: rgb(211 211 211 / 32%) !important;
+}
+
+.group:hover .group-hover\:-rotate-180 {
+    transform: rotate(180deg)
+}
+
+.scale-0 {
+    transform: scale(0)
+}
+
+.min-w-32 {
+    min-width: 8rem
+}
+
+@keyframes slideDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navBarMenuWithSearch {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: space-around;
+    transition: .3s ease-in-out;
+
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger span {
-    height: 3px;
-    width: 25px;
-    background: rgb(0, 0, 0);
-    margin: 4px;
-    border-radius: 3px;
-    transition: all 0.3s ease;
-}
-
-.menu {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex: 1;
-    transition: max-height 0.4s ease-in-out;
-}
-
-.menu-item {
+.navBarLogoAndMenu {
+    transform: translateY(-50px);
+    animation: slideDown 0.3s ease-out forwards;
+    z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999;
     position: relative;
-    cursor: pointer;
-    padding: 0.5rem 0.75rem;
-    white-space: nowrap;
-}
-
-.dropdown {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 1px 1px 4px 1px #d8d8d8;
-    border-radius: 0px;
-    background: #f7f7f7;
-    width: 80vh;
-    padding: 1rem;
-    display: none;
-    flex-direction: column;
-    border-radius: 0.5rem;
-    min-width: 200px;
-    z-index: 10;
-    animation: fadeIn 0.3s ease-in-out;
-    align-items: center;
-    /* border-bottom: 1px solid #161a42; */
-}
-
-.dropdown a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    padding: 8px 12px;
-    transition: 0.3s;
     width: 100%;
-    border-radius: 11px;
-    text-align: center;
-    font-weight: 600;
-}
-
-.dropdown a:hover {
-    color: #38bdf8;
-    background-color: #334155;
-    background: #8a8a8a7b;
-}
-
-.menu-item:hover>.dropdown {
-    display: flex;
-}
-
-.inner-item {
-    position: relative;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    padding: 8px 12px;
-    transition: 0.3s;
-    width: 100%;
-    /* border-radius: 11px; */
-    /* border-bottom: 1px solid #161a42; */
-    font-weight: 600;
-    text-align: center;
-}
-
-.inner-item:hover {
-    color: #38bdf8;
-    background-color: #8a8a8a7b;
-    background: #edededde;
-}
-
-.nested-dropdown {
-    display: none;
-    flex-direction: column;
     background-color: white;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    animation: fadeIn 0.3s ease-in-out;
-    min-width: 200px;
-    text-align: center;
 
 }
 
-.inner-item:hover .nested-dropdown {
-    display: flex;
-}
-
-.search-bar input {
-    padding: 0.5rem;
+/* TOP NAV BBUTTON  */
+.topNavbutton {
+    background: #002d71;
     border: none;
-    border-radius: 0.5rem;
-    width: 100%;
+    padding: 5px 13px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    width: 120px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+    color: white;
 }
 
-.search-bar {
-    width: 200px;
+.topNavbutton span {
+    display: inline-block;
+    transform: skew(21deg);
 }
 
-@media (max-width: 950px) {
-    .hamburger {
-        display: flex;
+.topNavbutton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: rgb(20, 20, 20);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+}
+
+.topNavbutton:hover {
+    color: #fff;
+}
+
+.topNavbutton:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+ul {
+    z-index: 11 !important;
+}
+
+.mobileLogo {
+    width: 60% !important;
+}
+
+/* RESPONSIVENES  */
+
+
+/* MOBILE  */
+
+@media(max-width:988px) {
+    .hideNavinMoble {
+        display: none;
     }
 
-    .menu {
-        overflow: hidden;
-        max-height: 0;
+    .hmParent {
+        display: flex !important;
+
+    }
+
+    .navBarMenuWithSearch {
         flex-direction: column;
+        gap: 6px;
+        margin-top: 30px;
+    }
+
+    .textAlignStart {
+        text-align: start;
+    }
+
+    .firstNavOptions {
+        padding-left: 40px;
+        /* background-color: white; */
+        cursor: pointer;
+        transition: background-color 0.5s ease;
         width: 100%;
-        align-items: flex-start;
+
     }
 
-    .menu.show {
-        max-height: 1000px;
-        animation: dropdownOpen 0.5s ease-in-out;
+
+
+    .firstNavOptions.active {
+        background-color: #002d71;
     }
 
-    @keyframes dropdownOpen {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .computerLogo {
+        display: none;
     }
 
-    .search-bar {
-        width: 100%;
-        margin-top: 1rem;
+    .paraOfMsTopNav {
+        font-size: 9px;
+        display: flex;
+        align-items: center;
     }
 
-    #hmBrgr {
-        top: 63px;
-        right: 0px;
+}
+
+@media(max-width:500px) {
+    .topNavbutton {
+        padding: 5px 2px !important;
+        width: 103px !important;
     }
 }
 
-.hamburger.open span:nth-child(1) {
+/* hamburger  */
+.hamburgerFirstNav {
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburgerFirstNav span {
+    display: block;
+    height: 3px;
+    background: black;
+    border-radius: 3px;
+    transition: 0.4s ease;
+}
+
+/* When active (clicked) */
+.hamburgerFirstNav.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburgerFirstNav.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburgerFirstNav.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.hmParent {
+    width: 100%;
+    padding: 0 25px;
+    justify-content: space-between;
+    display: none;
+    align-items: center;
+    background: #ffffff;
+}
+
+.hamburgerFirstNav {
+    float: right;
+}
+
+/* ------- */
+
+/* .hamburger.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
 
@@ -191,67 +252,4 @@
 .hamburger.open span:nth-child(3) {
     transform: rotate(-45deg) translate(10px, -10px);
 }
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* searc  */
-/* From Uiverse.io by boryanakrasteva */
-.input-container {
-    width: 220px;
-    position: relative;
-    /* border-radius: 50px; */
-    background: #e0e0e0;
-    /* box-shadow: 0 -4px 6px -2px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.2); */
-    border: 1px solid #1e293b;
-
-}
-
-.icon {
-    position: absolute;
-    right: 10px;
-    top: calc(50% + 5px);
-    transform: translateY(calc(-50% - 5px));
-}
-
-.inputSearch {
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    transition: .2s linear;
-    border: 2.5px solid black;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.input:focus {
-    outline: none;
-    border: 0.5px solid black;
-    box-shadow: -5px -5px 0px black;
-}
-
-.input-container:hover>.icon {
-    animation: anim 1s linear infinite;
-}
-
-@keyframes anim {
-
-    0%,
-    100% {
-        transform: translateY(calc(-50% - 5px)) scale(1);
-    }
-
-    50% {
-        transform: translateY(calc(-50% - 5px)) scale(1.1);
-    }
-}
+ */
