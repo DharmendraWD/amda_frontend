@@ -173,6 +173,7 @@ ul {
 
     .firstNavOptions.active {
         background-color: #002d71;
+        color: white;
     }
 
     .computerLogo {
